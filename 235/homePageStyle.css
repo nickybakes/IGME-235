@@ -1,0 +1,102 @@
+body{
+    background-color: rgb(18, 18, 18);
+    color: white;
+    font-family: "Roboto", Arial, sans-serif;
+}
+
+main{
+    background-color: rgb(18, 18, 18);
+}
+
+#intro-video{
+    display: block; margin: auto;
+    width: 96%;
+}
+
+header{
+    text-align: center;
+}
+
+h1{
+    text-shadow: black 0 0 10px;
+    font-size: 3em;
+    text-align: center;
+}
+
+h2{
+    text-shadow: black 0 0 14px;
+    text-align: center;
+}
+
+#bio{
+    background: linear-gradient(rgb(54, 54, 71), rgb(31, 31, 39));
+    margin: 0 auto;
+    width: 60vw;
+    min-height: 50vh;
+    padding: 6rem;
+    clear: right;
+    box-shadow: black 0 0 20px;
+}
+
+#project-links{
+    background: linear-gradient(rgb(54, 54, 71), rgb(31, 31, 39));
+    margin: 3em auto;
+    width: 60vw;
+    padding: 6rem;
+    box-shadow: black 0 0 20px;
+}
+
+img{
+    box-shadow: black 0 0 15px;
+}
+
+img.rightSide {
+    width: 15vw;
+    min-width: 15em;
+    border: 6px groove white;
+    float: right;
+    margin: 3em;
+}
+
+p{
+    text-indent: 2em;
+}
+
+/*Normal Links in the page*/
+
+a:link {
+    color: #48e3f1;
+}
+
+a:visited, a:active {
+    color: #4485da;
+}
+
+a:focus, a:hover {
+    color: #48a5f1;
+}
+
+/*Project Links*/
+
+a.projectLink:link{
+    text-align: center;
+    background-image: linear-gradient(to bottom right, rgba(56,51,61,.6), rgba(0,0,0,.6));
+    width: 20%;
+    padding: 1em 3em;
+    display: block;
+    margin: 2em auto;
+    text-decoration: none;
+    border: .05em solid #d7f3fa;
+    box-shadow: 0 .5em 1em .5em rgba(0, 0, 0, 0.3);
+}
+
+a.projectLink:visited, a.projectLink:active{
+    color: #d8d8d8;
+}
+
+a.projectLink:focus, a.projectLink:hover{
+    color: #48a5f1;
+    border-style: groove;
+    background-image: linear-gradient(to bottom right, rgba(0,0,0,.8), rgba(56,51,61,.8));
+    box-shadow: 0 .5em 1em .5em rgba(0, 0, 0, 0.6);
+}

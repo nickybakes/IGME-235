@@ -1,0 +1,68 @@
+
+
+main{
+
+    background-color: #FDF1D8;
+    border: 6px groove #F0544F;
+    margin: 0 auto;
+    width: 80vw;
+    padding: 3rem;
+}
+
+header, footer {
+    background-color: #C6D8D3;
+    border: 6px groove #F0544F;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+h1 {
+    color: #D81E5B;
+    font-family: "Press Start 2P", monospace;
+    border-bottom: 1px solid #D81E5B;
+}
+
+h2 {
+    color: #D81E5B;
+}
+
+p {
+    margin-left: 100px;
+}
+
+img.side {
+    border: 6px groove #F0544F;
+    float: right;
+    margin: 0 12px;
+}
+
+blockquote {
+    background-color: lightgray;
+    padding: 1rem;
+}
+
+body {
+    background-color: #331832;
+    font-family: "Roboto", Arial, sans-serif;
+}
+
+
+a:link {
+    color: #F0544F;
+}
+
+a:visited {
+    color: #a83c38;
+}
+
+a:focus {
+    color: #F0544F;
+}
+
+a:hover {
+    color: #F0544F;
+}
+
+a:active {
+    color: #F0544F;
+}
