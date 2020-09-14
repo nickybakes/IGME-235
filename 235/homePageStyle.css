@@ -29,6 +29,7 @@ h2{
 }
 
 #bio{
+    border: rgba(219, 219, 219, 0.3) 1px solid;
     background: linear-gradient(rgb(54, 54, 71), rgb(31, 31, 39));
     margin: 0 auto;
     width: 60vw;
@@ -39,6 +40,7 @@ h2{
 }
 
 #project-links{
+    border: rgba(219, 219, 219, 0.3) 1px solid;
     background: linear-gradient(rgb(54, 54, 71), rgb(31, 31, 39));
     margin: 3em auto;
     width: 60vw;
@@ -55,7 +57,7 @@ img.rightSide {
     min-width: 15em;
     border: 6px groove white;
     float: right;
-    margin: 3em;
+    margin: 0 3em 1em;
 }
 
 p{
@@ -96,7 +98,6 @@ a.projectLink:visited, a.projectLink:active{
 
 a.projectLink:focus, a.projectLink:hover{
     color: #48a5f1;
-    border-style: groove;
     background-image: linear-gradient(to bottom right, rgba(0,0,0,.8), rgba(56,51,61,.8));
     box-shadow: 0 .5em 1em .5em rgba(0, 0, 0, 0.6);
 }
