@@ -1,0 +1,58 @@
+/* Do everything in this file */
+
+header, main, footer{
+    width: 90%;
+    margin: 0 auto;
+}
+
+h2{
+    border-bottom: 2px solid red;
+}
+
+figure{
+    max-width: 650px;
+    margin: 2em auto;
+}
+
+figure img{
+    width: 100%;
+}
+
+#tetlist{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+span{
+    text-align: center;
+    display: block;
+    margin: 1em 0;
+    font-weight: bold;
+    font-size: large;
+}
+
+.tet{
+    border: 1px solid black;
+    flex: 0 0 450px;
+}
+
+.aliases{
+    margin-left: 1em;
+}
+
+
+/* added display: block to center the images of the tetrominoes in their blocks */
+.tet img{
+    display: block;
+    margin: 0 auto;
+    width: 60%;
+}
+
+.long img{
+    width: 80%;
+}
+
+.square img{
+    width: 40%;
+}
+
