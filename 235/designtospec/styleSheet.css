@@ -1,0 +1,266 @@
+@font-face {
+    font-family: 'dogicaregular';
+    src: url('fonts/dogica-webfont.woff2') format('woff2'), url('fonts/dogica-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'dogicabold';
+    src: url('fonts/dogicabold-webfont.woff2') format('woff2'), url('dogicabold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'dogica_pixelregular';
+    src: url('fonts/dogicapixel-webfont.woff2') format('woff2'), url('fonts/dogicapixel-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'dogica_pixelbold';
+    src: url('fonts/dogicapixelbold-webfont.woff2') format('woff2'), url('fonts/dogicapixelbold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'retro_computerregular';
+    src: url('fonts/retro_computer_personal_use-webfont.woff2') format('woff2'), url('fonts/retro_computer_personal_use-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: #35363d;
+    color: white;
+    font-family: "dogica_pixelregular", Arial, sans-serif;
+    margin: 0;
+    font-size: 1.1em;
+}
+
+header {
+    background-color: #686868;
+    font-family: "retro_computerregular", Arial, sans-serif;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    justify-content: center;
+    align-items: center;
+    padding: 0em 6em;
+}
+
+footer {
+    background-image: url("media/trees.jpg");
+    background-size: cover;
+    border-top: white 10px solid;
+    font-family: "retro_computerregular", Arial, sans-serif;
+    display: grid;
+    grid-template-columns: 40% 35%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3em 7em;
+}
+
+.axeIcon {
+    margin: 0 2em;
+    height: 3em;
+}
+
+.pageSubtitle {
+    width: 90%;
+    text-align: right;
+}
+
+.copyright{
+    text-align: right;
+}
+
+h1 {
+    font-family: "retro_computerregular", Arial, sans-serif;
+    font-weight: normal;
+    font-size: 3rem;
+    display: inline-block;
+}
+
+h2 {
+    font-family: "retro_computerregular", Arial, sans-serif;
+    font-weight: normal;
+    font-size: 2rem;
+    margin: .5em 0 2rem;
+}
+
+h3 {
+    font-weight: normal;
+}
+
+#intro{
+    margin: 0 auto;
+    width: 90vw;
+    padding: 2rem 6rem;
+}
+
+#items {
+    margin: 0 auto;
+    width: 80vw;
+    padding: 2rem 6rem;
+}
+
+#oakTreeIntro {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 2em;
+}
+
+.oakTreeDesc {
+    background-color: #686868;
+    padding: 1em 2em;
+    width: 90%;
+}
+
+.oakTreeImage {
+    background: linear-gradient(to bottom right, #e8fdf5, #244d3e);
+    max-width: 100%;
+    padding: 2em;
+    border: white solid 10px;
+}
+
+.valleyImage {
+    width: 100%;
+    height: 90%;
+}
+
+#itemsList {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    justify-content: center;
+    grid-gap: 2em;
+}
+
+.itemDisplay {
+    text-align: center;
+    background-color: #324e44;
+    padding: 2em;
+    border: white solid 10px;
+}
+
+.itemDesc {
+    background-color: #686868;
+    padding: 1em;
+}
+
+.itemImage{
+    width: 80%;
+}
+
+@media screen and (max-width:1500px) {
+    body {
+        font-size: 1em;
+    }
+    header {
+        background-color: #686868;
+        font-family: "retro_computerregular", Arial, sans-serif;
+        padding-left: 2em;
+    }
+    .axeIcon {
+        margin: 0 1em;
+        height: 2em;
+    }
+
+    .pageSubtitle {
+        width: 100%;
+    }
+    #intro{
+        margin: 0 auto;
+        width: 90vw;
+        padding: 2rem;
+    }
+
+    #items {
+        margin: 0 auto;
+        width: 80vw;
+    }
+    
+    #oakTreeIntro {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-gap: 2em;
+    }
+    .oakTreeDesc {
+        background-color: #686868;
+        margin: 0 auto;
+    }
+    .oakTreeImage {
+        margin: 0 auto;
+        width: 60%;
+    }
+
+    #itemsList {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+
+    .itemDisplay {
+        text-align: center;
+        background-color: #324e44;
+        padding: 1em;
+        border: white solid 10px;
+    }
+    
+    .itemDesc {
+        background-color: #686868;
+        padding: 1em;
+    }
+    
+    .itemImage{
+        width: 40%;
+    }
+    
+    footer br { 
+        content: ' '; 
+    }
+
+    footer{
+        grid-template-columns: 40% 50%;
+        padding: 2em 1em;
+    }
+}
+
+@media screen and (max-width:1100px) {
+    #intro{
+        padding: 2rem 0;
+        margin: 0 auto;
+        width: 90vw;
+    }
+
+    .axeIcon {
+        margin: 0;
+        height: 0;
+    }
+
+    #items {
+        padding: 2rem 0;
+        margin: 0 auto;
+        width: 90vw;
+    }
+    
+    #itemsList {
+        display: grid;
+        grid-template-columns: 100%;
+    }
+
+    h1 {
+        font-size: 1.7em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    .oakTreeDesc {
+        background-color: #686868;
+        width: 100%;
+        padding: 5px;
+    }
+}
