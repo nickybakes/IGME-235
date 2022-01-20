@@ -38,22 +38,21 @@
 	document.querySelector("#button-1").onclick = () => { loadTextXHR("data/taffy-facts.txt", updateTaffyOutput) };
 	document.querySelector("#button-2").onclick = () => { loadTextXHR("data/viking-facts.txt", updateVikingOutput) };
 
-	function updateTaffyOutput(text){
-		document.querySelector("#output-1").innerHTML = text;
+	function updateTaffyOutput(e){
+		document.querySelector("#output-1").innerHTML = e.target.responseText;
 	}
 
-	function updateVikingOutput(text){
-		document.querySelector("#output-2").innerHTML = text;
+	function updateVikingOutput(e){
+		document.querySelector("#output-2").innerHTML = e.target.responseText;
 	}
 
 	function loadTextXHR(url, callback) {
 		const xhr = new XMLHttpRequest();
 		xhr.onload = (e) => {
 			// console.log(`In online - HTTP Status Code = ${e.target.status}`);
-			const text = e.target.responseText;
 			// console.log(`Success - the file length is ${text.length}`);
 
-			callback(text);
+			callback(e);
 
 		};
 
