@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Technobabble Generator</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	<style>
+		html,
+		body {
+			background-color: rgb(18, 18, 18);
+			color: white;
+			font-family: "Roboto", Arial, sans-serif;
+			margin: 0 auto;
+			padding: 2rem;
+			text-align: center;
+		}
+
+		* {
+			transition: all 0.2s ease-in-out;
+		}
+
+		#output {
+			font-size: 150%;
+		}
+
+		#my-button {
+			background-color: #2e122998;
+			border: #ffd900 solid 2px;
+			font-size: x-large;
+			color: white;
+			border-radius: 16px;
+			padding: 2rem;
+			margin: 5px auto;
+			outline: none;
+		}
+
+		#my-button:hover {
+			cursor: pointer;
+		}
+
+		#my-button:hover,
+		#my-button:focus {
+			border-color: #ffd900;
+			color: #ffd900;
+			background-color: #ffd9002a;
+		}
+
+		#my-button.active,
+		#my-button:active {
+			border-color: #ffd900;
+			background-color: #ffd900;
+			color: black;
+		}
+
+		@media only screen and (max-width: 900px) {
+			#my-button {
+				width: 100%;
+				padding: 3rem;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<p id="output">Loading...</p>
+	<button id="my-button">More Technobabble!</button>
+	<script>
+		"use strict";
+
+		const words1 = ["Acute", "Aft", "Anti-matter", "Bipolar", "Cargo", "Command", "Communication", "Computer", "Deuterium", "Dorsal", "Emergency", "Engineering", "Environmental", "Flight", "Fore", "Guidance", "Heat", "Impulse", "Increased", "Inertial", "Infinite", "Ionizing", "Isolinear", "Lateral", "Linear", "Matter", "Medical", "Navigational", "Optical", "Optimal", "Optional", "Personal", "Personnel", "Phased", "Reduced", "Science", "Ship's", "Shuttlecraft", "Structural", "Subspace", "Transporter", "Ventral"];
+
+		const words2 = ["Propulsion", "Dissipation", "Sensor", "Improbability", "Buffer", "Graviton", "Replicator", "Matter", "Anti-matter", "Organic", "Power", "Silicon", "Holographic", "Transient", "Integrity", "Plasma", "Fusion", "Control", "Access", "Auto", "Destruct", "Isolinear", "Transwarp", "Energy", "Medical", "Environmental", "Coil", "Impulse", "Warp", "Phaser", "Operating", "Photon", "Deflector", "Integrity", "Control", "Bridge", "Dampening", "Display", "Beam", "Quantum", "Baseline", "Input"];
+
+		const words3 = ["Chamber", "Interface", "Coil", "Polymer", "Biosphere", "Platform", "Thruster", "Deflector", "Replicator", "Tricorder", "Operation", "Array", "Matrix", "Grid", "Sensor", "Mode", "Panel", "Storage", "Conduit", "Pod", "Hatch", "Regulator", "Display", "Inverter", "Spectrum", "Generator", "Cloud", "Field", "Terminal", "Module", "Procedure", "System", "Diagnostic", "Device", "Beam", "Probe", "Bank", "Tie-In", "Facility", "Bay", "Indicator", "Cell"];
+
+		generateRandomizedTechnobabble();
+
+		document.querySelector("#my-button").onclick = generateRandomizedTechnobabble;
+
+		//picks and returns a random element from an array given thru parameter
+		function getRandomWord(words) {
+			return words[[Math.floor(Math.random() * words.length)]];
+		}
+
+		//gets 3 randomized technobabble words to create the full technobabble statement
+		function generateRandomizedTechnobabble() {
+			let babble = `${getRandomWord(words1)} ${getRandomWord(words2)} ${getRandomWord(words3)}`;
+			document.querySelector("#output").innerHTML = babble;
+		}
+
+
+	</script>
+</body>
+
+</html>

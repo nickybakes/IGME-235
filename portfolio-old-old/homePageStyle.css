@@ -109,6 +109,10 @@ strong{
     text-decoration: underline;
 }
 
+.artDescription{
+    text-align: center;
+    margin: 1em 0 2em;
+}
 
 @media screen and (max-width:900px) {
     #projects, #ongoing-pieces, #artwork{
@@ -150,16 +154,16 @@ strong{
     .projectImage:hover, .artImage:hover{
         transform:scale(1);
     }
+
+    .artDescription{
+        text-align: center;
+        margin: 1em 0 3em;
+    }
 }
 
 
 img{
     box-shadow: black 0 0 15px;
-}
-
-.artDescription{
-    text-align: center;
-    margin: 1em 0;
 }
 
 p{

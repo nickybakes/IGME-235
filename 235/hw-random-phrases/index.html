@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="randomphrases-style.css">
+    <title>Nick Baker Random Phrases HW</title>
+</head>
+
+<body onload="displayQuote()">
+    <header><h1>The Scientist from Half Life 1 says...</h1></header>
+
+    <p></p>
+
+    <button id="quoteButton" type="button">Generate quote!</button>
+
+    <footer><p>Nick Baker</p></footer>
+
+    <script>
+        let quotes = ["For God's sake, open the silo door! They're coming for us; it's our only way out!",
+            "Do you know who ate all the donuts?", "Why do we all have to wear these ridiculous ties?", "Don't shoot! I'm with the science team!",
+            "Freeman, you fool!", "You are from the Anomalous Materials Lab. Yes, I recognize you.", "Hello there.", "You're going to have to leave me here, Gordon."];
+        let quoteText = document.querySelector("p");
+        let quoteButton = document.querySelector("button");
+
+        quoteButton.addEventListener("click", displayQuote);
+
+        function displayQuote(){
+            quoteText.innerHTML = quotes[Math.floor(Math.random()*quotes.length)];
+        }
+    </script>
+</body>
+
+</html>

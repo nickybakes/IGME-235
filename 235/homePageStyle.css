@@ -81,6 +81,7 @@ a:focus, a:hover {
 /*Project Links*/
 
 a.projectLink:link{
+    color: #d8d8d8;
     text-align: center;
     background-image: linear-gradient(to bottom right, rgba(56,51,61,.6), rgba(0,0,0,.6));
     width: 20%;

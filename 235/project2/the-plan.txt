@@ -1,0 +1,5 @@
+I will be making a more advanced Giphy Finder tool, made for an audience of teenagers to young adults, or anyone who wants to spend their time browsing gifs and "favoriting" them for later viewing/sharing. The site will have a Trending section, showing Giphy's trending gifs, a Search section where the user can apply filters to find the gif they want, and a Favorites section, where the user can browse Gifs they have favorited from the Trending or Search sections. Each gif will have an easy "copy link" button which will write the shareable Gif link to the user's clipboard, as well as a button to add that gif to their favorites, and a button to view the original Gif page on Giphy.
+
+The main purpose of the site is to be able to find gifs you like and immediately share them with friends or add the gifs to your favorites for easy sharing later on.
+
+I will be using the Giphy API.

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Giphy Finder</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <script src="js/main.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <h1>Giphy Finder</h1>
+    </header>
+    <main>
+        <div class="options">
+            <div class="widgets search">
+                Search for: 
+                <input id="searchterm" type="text" size="20" maxlength="20" autofocus value="cats" />
+            </div>
+
+            <div class="widgets amountToShow">
+                Amount to show:
+                <select id="limit">
+                    <option value="5">5</option>
+                    <option value="10" selected>10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                </select>
+            </div>
+
+            <div class="widgets goButton">
+                <button type="button" id="search" class="green">Find some GIFs!<br />:-)</button>
+            </div>
+            
+        </div>
+        <hr>
+
+        <h2>Results</h2>
+        <div id="status">Ready to Search!</div>
+        <div id="content">
+            <p></p>
+        </div>
+    </main>
+
+</body>
+
+</html>

@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="media/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="media/favicon-16x16.png" sizes="16x16" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="homepage-style.css">
+    <title>Nick Baker Game Development and Design Portfolio</title>
+</head>
+
+<body onload="init()">
+    <header id="main-header">
+        <h1>Nick Baker</h1>
+        <div class="header-contact">nickmbaker1@gmail.com</div>
+    </header>
+    <button class="tab-button close-background-button" onclick="closeBackground()">&#10094;</button>
+    <main>
+        <img src="media/underpass-halftone3.png" alt="background image of street underpass" class="background-overlay">
+
+        <section id="title-nav">
+            <div id="shown-description">
+                <div id="projects" class="tab-content">
+                    <h2>Projects</h2>
+                    <p>Professional, personal, and academic works that demonstrate my skills in programming, art,
+                        animation, and design. Projects were done in teams of various sizes, or done solo. Click the
+                        arrows to see more in-depth info about what I contributed to each project.
+                    </p>
+                </div>
+
+                <div id="artwork" class="tab-content">
+                    <h2>Artwork</h2>
+                    <p>Various pieces of art I've done in the past few years. Some of these works are large physical
+                        pieces, some are small sketchbook pages, and some are digital.</p>
+                </div>
+
+                <div id="design" class="tab-content">
+                    <h2>Level Design</h2>
+                    <p>I started doing level design as a hobby in 2014 with Team Fortress 2. Since then, I
+                        have expanded my skillset to a varity of design ideas, and I've also done some professional work
+                        with the map <button class="in-text-button" onclick="openModal('cursed-cove-modal')">Cursed
+                            Cove</button>.
+                    </p>
+                </div>
+            </div>
+
+            <nav>
+                <div class="tabs">
+                    <button class="tab-button active" onclick="openSection(event, 'projects')"
+                        id="projects-button">Projects</button>
+                    <button class="tab-button" onclick="openSection(event, 'artwork')"
+                        id="artwork-button">Artwork</button>
+                    <button class="tab-button" onclick="openSection(event, 'design')" id="design-button">Level
+                        Design</button>
+                    <button class="tab-button"
+                    onclick="window.open('media/nick-baker-resume.pdf','_blank');"  type="button">
+                        Resume</button>
+                    <button class="tab-button view-background-button" onclick="viewBackground()">View
+                        Background</button>
+                </div>
+            </nav>
+
+        </section>
+
+
+        <section id="shown-content">
+            <div id="projects-content" class="tab-content content-panel no-height">
+                <div class="project-display">
+                    <div class="project-image"><img src="media/project-cursed-cove.png"
+                            alt="Davey Jones ghost character in front of pirate bay."></div>
+                    <div class="project-desc">
+                        <h3>Cursed Cove</h3>
+                        <h4>Professional</h4>
+                        <h5>Apr - Oct 2018</h5>
+                        <p>A Team Fortress 2 map developed by a team of 12, bought and featured by Valve Software in the
+                            Halloween 2018 event.</p>
+                    </div> <button class="modal-button" onclick="openModal('cursed-cove-modal')">&#10095;</button>
+                </div>
+
+                <div class="project-display">
+                    <div class="project-image"><img src="media/project-scarlet-meadow.png"
+                            alt="Scarlet Meadow character and logo in front of city"></div>
+                    <div class="project-desc">
+                        <h3>Scarlet Meadow</h3>
+                        <h4>Academic/Personal</h4>
+                        <h5>Feb - May 2020</h5>
+                        <p>A 2D platformer, beat-em-up with hand-drawn animation and a custom level editor tool, all
+                            built in C# and Monogame.</p>
+                    </div> <button class="modal-button" onclick="openModal('scarlet-meadow-modal')">&#10095;</button>
+                </div>
+
+                <div class="project-display">
+                    <div class="project-image"><img src="media/project-queen.png"
+                            alt="1930's Queen Elizabeth character in TF2 map"></div>
+                    <div class="project-desc">
+                        <h3>Queen Elizabeth III in &quot;A Royal Pain in the Arse&quot;</h3>
+                        <h4>Personal</h4>
+                        <h5>Feb - Apr 2018</h5>
+                        <p>Traditional, hand-drawn animated characters brought into a Team Fortress 2 map as a boss
+                            fight.</p>
+                    </div> <button class="modal-button" onclick="openModal('queen-modal')">&#10095;</button>
+                </div>
+
+                <div class="project-display">
+                    <div class="project-image"><img src="media/project-neon-pong.png"
+                            alt="Electra character and Neon Pong logo"></div>
+                    <div class="project-desc">
+                        <h3>Neon Pong</h3>
+                        <h4>Academic/Personal</h4>
+                        <h5>Apr - May 2019</h5>
+                        <p>A side-scrolling, back-and-forth, singleplayer fighting game developed using Java,
+                            built-in Java libraries, and hand-drawn animation.</p>
+                    </div> <button class="modal-button" onclick="openModal('neon-pong-modal')">&#10095;</button>
+                </div>
+
+                <div class="project-display">
+                    <div class="project-image"><img src="media/project-neon-heights.png" alt="Neon Heights logo"></div>
+                    <div class="project-desc">
+                        <h3>Neon Heights</h3>
+                        <h4>Personal</h4>
+                        <h5>Feb 2019 - Current</h5>
+                        <p>A local and online multiplayer game currently being developed in Unity.</p>
+                    </div> <button class="modal-button" onclick="openModal('neon-heights-modal')">&#10095;</button>
+                </div>
+            </div>
+            <div id="artwork-content" class="tab-content content-panel no-height">
+                <div class="artPiece">
+                    <img class="artImage" src="media/artwork/collage-2019.jpg" alt="My character sketches from 2019">
+                    <div class="artDescription">
+                        <h5>"2019 Sketch Collage"</h5>, Pencil converted to digital, 2019
+                    </div>
+                </div>
+                <section id="artworkList">
+                    <div class="artPiece">
+                        <img class="artImage" src="media/artwork/cartoons-in-the-city.jpg"
+                            alt="Cartoon characters rendered realistically in an alleyway">
+                        <div class="artDescription">
+                            <h5>"Cartoons in the City"</h5>, Gouache, May 2018
+                        </div>
+                    </div>
+                    <div class="artPiece">
+                        <img class="artImage" src="media/artwork/fruitful-of-flavor.jpg"
+                            alt="Apples and bananas in a still life painting">
+                        <div class="artDescription">
+                            <h5>"Fruitful of Flavor"</h5>, Oil, Dec 2017
+                        </div>
+                    </div>
+                    <div class="artPiece">
+                        <img class="artImage" src="media/artwork/pepper-and-olive-oil.jpg"
+                            alt="Observational pencil drawing of a wooden pepper shaker and glass olive oil bottle">
+                        <div class="artDescription">
+                            <h5>"Pepper and Olive Oil"</h5>, Pencil, Dec 2017
+                        </div>
+                    </div>
+                    <div class="artPiece">
+                        <img class="artImage" src="media/artwork/almonds-in-a-jar.jpg"
+                            alt="Observational pencil drawing of almonds in a glass jar">
+                        <div class="artDescription">
+                            <h5>"Almonds in a Jar"</h5>, Pencil, Dec 2017
+                        </div>
+                    </div>
+                    <div class="artPiece">
+                        <img class="artImage" src="media/artwork/imperfect-city.jpg"
+                            alt="An orthographic ink drawing of a city, following a pattern of red and black buildings">
+                        <div class="artDescription">
+                            <h5>"Imperfect City"</h5>, Pen and Ink, Jan 2018
+                        </div>
+                    </div>
+                    <div class="artPiece">
+                        <img class="artImage" src="media/artwork/steam-city.jpg"
+                            alt="Industrial studies in red pen. Train cars, silos, and bridges!">
+                        <div class="artDescription">
+                            <h5>"Steam City"</h5>, Red Pen, Oct 2018
+                        </div>
+                    </div>
+                    <div class="artPiece">
+                        <img class="artImage" src="media/artwork/monkeys.jpg" alt="Monkey's in space.">
+                        <div class="artDescription">
+                            <h5>"Epic Space Monkeys"</h5>, Pencil drawing, digital painting, Nov 2019
+                        </div>
+                    </div>
+                    <div class="artPiece">
+                        <img class="artImage" src="media/artwork/jet.jpg" alt="Jet from Lethal League in rollerblades">
+                        <div class="artDescription">
+                            <h5>"Jet from Lethal League Blaze"</h5>, Pencil drawing, digital painting, Aug 2019
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div id="design-content" class="tab-content content-panel no-height">
+                <div class="level-display">
+                    <img src="media/levels/sleepers0.jpg" alt="placeholder" id="level-sleepers" class="level-slideshow">
+                    <button class="level-slideshow-left-button" onclick="slideshowGoLeft('sleepers')">&#10094;</button>
+                    <button class="level-slideshow-right-button"
+                        onclick="slideshowGoRight('sleepers')">&#10095;</button>
+                    <div class="level-desc">
+                        <h3>Pl Sleepers</h3>
+                        <h5>Nov 2018 - Current</h5>
+                        <p>An experiment with very angular geometry and a big city aesthetic in Team Fortress 2. I have
+                            been working on the map on and off in my free time, it is not yet playable. The name
+                            &quot;Sleepers&quot; has no meaning, it was based off of some music I was listening to at
+                            the time.</p>
+                    </div>
+                </div>
+
+                <div class="level-display">
+                    <img src="media/levels/havana0.jpg" alt="placeholder" id="level-havana" class="level-slideshow">
+                    <button class="level-slideshow-left-button" onclick="slideshowGoLeft('havana')">&#10094;</button>
+                    <button class="level-slideshow-right-button" onclick="slideshowGoRight('havana')">&#10095;</button>
+                    <div class="level-desc">
+                        <h3>MvM Havana</h3>
+                        <h5>May - July 2017</h5>
+                        <p>Collab with Jess &quot;Muddy&quot; Dabbs, a Team Fortress 2 map set in Havana, Cuba. Players
+                            must fight
+                            off waves of invading robots. We wanted to see how Cuban architecture could fit into the TF2
+                            art style.</p>
+                        <p><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1089026871" target="_blank"
+                                class="link-button">View on Steam Workshop</a></p>
+                    </div>
+                </div>
+
+                <div class="level-display">
+                    <img src="media/levels/chug0.jpg" alt="placeholder" id="level-chug" class="level-slideshow">
+                    <button class="level-slideshow-left-button" onclick="slideshowGoLeft('chug')">&#10094;</button>
+                    <button class="level-slideshow-right-button" onclick="slideshowGoRight('chug')">&#10095;</button>
+                    <div class="level-desc">
+                        <h3>De Chug</h3>
+                        <h5>Dec 2017 - Current</h5>
+                        <p>A Counter Strike: Global Offensive map with wacky angles and more complicated routes and
+                            sites than normal maps. For instance, the B site is stacked, meaning players can plant on
+                            the top or bottom, which I have not seen been done for a bombsite. The map is playable and I
+                            work on it whenever my friends and I feel like playtesting it.</p>
+                        <p><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1232595293" target="_blank"
+                                class="link-button">View on Steam Workshop</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="cursed-cove-modal" class="modal" onclick="closeModalByClickingOffIt(event)">
+            <div class="modal-inner">
+                <button class="close-modal-button" onclick="closeModal()">&#10094;</button>
+                <div class="modal-desc">
+                    <h2>Cursed Cove</h2>
+                    <h3 class="subtitle">Professional, April - October 2018</h3>
+                    <p>In a team of 12, I helped developed the map "Cursed Cove" for Valve Software's "Team Fortress 2".
+                        The map was bought and featured by Valve as a part of the Halloween "Scream Fortress" event in
+                        2018. On the team, I contributed concepts for the level design, and I developed parts of the
+                        background/skybox of the map. In the map, players must kill other players to collect their
+                        souls, and then must deliver those souls to Davy Jones' Locker.</p>
+                </div>
+                <img src="media/cove-banner.jpg" alt="Cursed Cove bay area" class="banner">
+                <div class="modal-desc">
+                    <h3>Design Concepts</h3>
+                    <p>During pre-production of the map, I contributed ideas for
+                        possible building shapes, locations on the map, and gameplay concepts. In order to create the
+                        feeling of a &quot;bustling pirate bay&quot; our buildings were made very tall with lots of
+                        cramped, narrow alleyways in between.</p>
+                    <div id="concept-images-small">
+                        <img src="media/cove-concept1.jpg" alt="Early design for mid" class="concept-image-small">
+                        <img src="media/cove-concept2.jpg" alt="concepts for fightin on angled rooftops"
+                            class="concept-image-small">
+                        <img src="media/cove-concept3.jpg" alt="putting valuables on deadly cliffside concepts"
+                            class="concept-image-small">
+                    </div>
+                    <div id="concept-images-big">
+                        <img src="media/cove-concept4.jpg" alt="ideas for detailing mid" class="concept-image-big">
+                        <img src="media/cove-concept5.jpg" alt="early art style and texture palette development"
+                            class="concept-image-big">
+                    </div>
+                    <p>Design sketches of possible gameplay areas, and early art style and texture palette developement.
+                    </p>
+                    <h3>Background and Skybox Detailing</h3>
+                    <p>When the playable area of the map was nearly complete, some teammates and I started working on
+                        the out-of-bounds areas. While the playable area was symmetrical between the two teams, RED and
+                        BLU, the out-of-bounds areas would be asymmetrical to appear more visually interesting. I helped
+                        develop the jungle/forest area behind RED's base, as well as the cobble fortress behind BLU's
+                        base. This perfectly blended Team Fortress 2's tropes of RED using lots of natural, wooden
+                        materials, and BLU
+                        using lots of industrial materials for their bases with an old-timey pirate theme. While much of
+                        BLU's fortress was scrapped in the final product due to optimization concerns, it still helped
+                        us understand the visual style were we aiming for.</p>
+                    <div id="skybox-images">
+                        <img src="media/cove-skybox1.jpg" alt="top down blueprint of map"
+                            class="concept-image-small skybox-image-1">
+                        <img src="media/cove-skybox2.jpg" alt="landscaping behind red's base"
+                            class="concept-image-big skybox-image-2">
+                        <img src="media/cove-skybox3.jpg" alt="cobble fortress behind blue's base"
+                            class="concept-image-big skybox-image-3">
+                        <img src="media/cove-final1.jpg" alt="final red base" class="concept-image-big skybox-image-4">
+                        <img src="media/cove-final2.jpg" alt="final blue base" class="concept-image-big skybox-image-5">
+                    </div>
+                    <p>Early versions of the skybox, and the final versions of the skybox.
+                    </p>
+                    <h3>The Result</h3>
+                    <p>Watch the trailer and view the map on the Steam Workshop! The map is also available to play on
+                        official Team Fortress 2 servers every year during the Halloween event!
+                    </p>
+                    <div class="project-video"> <iframe src="https://www.youtube.com/embed/Y8goSGrh_mg"
+                            allowfullscreen></iframe></div>
+                    <p><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1498584149" target="_blank"
+                            class="link-button">View on Steam Workshop</a></p>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="scarlet-meadow-modal" class="modal" onclick="closeModalByClickingOffIt(event)">
+            <div class="modal-inner">
+                <button class="close-modal-button" onclick="closeModal()">&#10094;</button>
+                <div class="modal-desc">
+                    <h2>Scarlet Meadow</h2>
+                    <h3 class="subtitle">Academic/Personal, February - May 2020</h3>
+                    <p>Scarlet Meadow is a 2D platformer, beat-em-up game with traditional, hand-drawn animation,
+                        developed in C# and Monogame. I worked with a team as the lead artist, but I also developed the
+                        physics system for objects in the game, enemy behavior, UI elements, and I designed and
+                        developed a
+                        robust, graphical level editor using for content production for the game. The game features
+                        traditional, hand-drawn animation with inspiration from comic books and Cuban architecture.</p>
+                </div>
+                <img src="media/scarlet-banner.jpg" alt="Scarlet meadow logo" class="banner">
+                <div class="modal-desc">
+
+                    <h3>Physics and Interactivity</h3>
+                    <p>Many of the elements of Scarlet Meadow are physically interactive, meaning that a robust physics
+                        system that also responded well to the player's
+                        inputs was needed. I developed a physics system that has velocity, air resistance, and collision
+                        detection
+                        using axis-aligned bounding boxes. The collisions could be customized to be solid, semi-solid
+                        (meaning a platform the player can jump through), or triggers for certain events. In terms of
+                        interactive elements, I developed ziplines, trampolines, Scarlet's lasso attack which shoots out
+                        a lasso that grabs onto anything it touches and then comes straight back to the player, enemy
+                        behavior,
+                        linear and bouncy projectiles, collectible items, stage objectives, and much more.
+                    </p>
+                    <!-- <video muted loop playsinline controls poster="media/scarlet-meadow-demo-p.jpg"
+                        class="inline-video">
+                        <source class="fullsize" src="media/scarlet-meadow-demo-48.mp4" type="video/mp4"> -->
+                    </video>
+                    <h3>The Scarlet Editor and Level Design Pipeline</h3>
+                    <p>&quot;Scarlet Meadow&quot; features 16 unique levels all designed by me. Each level only takes
+                        about 2-3 minutes to complete, but they are tough, meaning that new players will be retrying
+                        each one until they master them all. In order to build all 16 levels, a powerful level editor
+                        tool was needed. Inspired by Valve Software’s &quot;Hammer Editor&quot; and Super Mario Maker’s
+                        &quot;Course Editor&quot;, &quot;The Scarlet Editor&quot; gives the user full control of their
+                        levels, letting them paint tiles of collision data, place props, enemies, items, and change
+                        properties of the level such as the background or level objective. The editor also has some
+                        quality of life features, such as being able to zoom in and out with the scroll wheel, pan
+                        around by clicking and dragging, and more. Stages are stored in &quot;.scar&quot; (Scarlet)
+                        files,
+                        which, when directly loaded into the game, will optimize the collision mesh and let the user
+                        play their level. I developed all of these systems in about 3 weeks.</p>
+                    <!-- <video muted loop playsinline controls poster="media/scarlet-editor-demo-p.jpg"
+                        class="inline-video">
+                        <source class="fullsize" src="media/scarlet-editor-demo.mp4" type="video/mp4"> -->
+                    </video>
+                    <h3>Traditional, Hand-Drawn Animation with Comic Book Flare</h3>
+                    <p>I conceptualized and originally designed the Scarlet Meadow character back in 2017, but as my own
+                        art style has changed and improved since then, so has the design of the character. For use in
+                        this full game, I fleshed out the overall world by adding more characters, such as Scarlet's
+                        friend Cocoa Cavero, the cactus civilians, and enemies like the Lawmakers and Robberbarons. All
+                        of the characters for this game are hand-drawn and inked on physical paper, and then scanned in
+                        to be colored
+                        digitally. This method gives the animation its hand-drawn charm, but the actual style, inpired
+                        by pop art, street art, and comic books, is angular, colorful, and bold. As with my previous
+                        project, &quot;Neon Pong&quot;, I applied a halftone filter to everything, which was a quick and
+                        affordable way to give some much needed texture and comic book flare to the otherwise flat
+                        graphics.</p>
+                    <!-- <video muted loop playsinline controls poster="media/scarlet-meadow-animation-reel-p.jpg"
+                        class="inline-video">
+                        <source class="fullsize" src="media/scarlet-meadow-animation-reel.mp4" type="video/mp4"> -->
+                    </video>
+                    <h3>&quot;Curbana&quot; and Environmental Design</h3>
+                    <p>The game takes place in &quot;Curbana&quot;, a fictional urban environment of skyscrapers mixed
+                        with
+                        colorful, Cuban inspired architecture. The props scattered throughout the levels are designed to
+                        give the
+                        levels a bit of depth in a 2D setting, while also making sure that characters, items, and
+                        interactive objects all share a bold, black outline that pops out to players' eyes.</p>
+                    <img src="media/scarlet-environment0.png" alt="Diroama of a Scarlet Meadow level"
+                        id="scarlet-diorama" class="scarlet-diorama">
+                    <h3>The Result</h3>
+                    <p>The game is complete with 16 tricky levels, fun physics, and eye-catching graphics. You can watch
+                        the trailer
+                        and download the game and level editor below!
+                    </p>
+                    <div class="project-video"> <iframe src="https://www.youtube.com/embed/Hd5D4lWR8uQ"
+                            allowfullscreen></iframe></div>
+                    <p> <a href="https://drive.google.com/file/d/1RlL1hsU5aCFjWXO2nUsQ-MGaU93lmQs7/view" target="_blank"
+                            class="link-button">Download the game and level editor</a></p>
+                    <div class="gif-grid">
+                        <img src="media/scarlet-run.gif" alt="Running animation of Scarlet" class="animation-gif">
+                        <img src="media/cocoa-run.gif" alt="Running animation of Cocoa" class="animation-gif">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="queen-modal" class="modal" onclick="closeModalByClickingOffIt(event)">
+            <div class="modal-inner">
+                <button class="close-modal-button" onclick="closeModal()">&#10094;</button>
+                <div class="modal-desc">
+                    <h2>Queen Elizabeth III in &quot;A Royal Pain in the Arse&quot;</h2>
+                    <h3 class="subtitle">Personal, February - April 2018</h3>
+                    <p>A Team Fortress 2 map that makes players fight against my own 1930's style animated characters,
+                        play minigames for power-ups, and take control of the center control point, all released on
+                        April Fools as a
+                        &quot;joke styled map&quot;. I was
+                        inspired by Studio MDHR's 2017 game, &quot;Cuphead&quot;, with its own 1930's aesthetics and
+                        jazz
+                        soundtrack. This was the first time I had done a large scale project based on hand-drawn
+                        animation. This project was done solo.</p>
+
+                    <p><img src="media/queen-banner.png" alt="Queen Elizabeth logo and character" class="queen-banner">
+                    </p>
+
+                    <h3>A New, Old-Timey, Concept</h3>
+                    <p> No one had really done a map with hand-drawn animated
+                        characters before, at least not to the same scope that I was going to attempt, meaning I was on
+                        my own to figure out how it should work. With hard limits on how much I could push the Source
+                        Engine to my will, I brainstormed many ideas
+                        on how to accomplish my goal. I thought of using 3D models with animated textures, but that was
+                        beyond my skillset at the time. I also thought of having tons of brushes, each one with
+                        a single frame of animation textured on it, that would flicker on and off in a sequence, but
+                        that would be wildly inefficient. I finally decided to utilize particle systems, as they are
+                        literally meant for putting 2D sprites in a 3D environment, and they gave me a huge range of
+                        customizability.
+                    </p>
+
+                    <p>The first test had some flickering issues, so to fix
+                        this I just duplicated the animation. Overall, using the particle system was a very cheap and
+                        easy way to display the animations in the map, and it also meant I could make the character
+                        always face the player's viewpoint, making the character look very evil.</p>
+
+                    <!-- <video muted loop playsinline controls poster="media/queen-demo-p.jpg" class="inline-video">
+                        <source class="fullsize" src="media/queen-demo.mp4" type="video/mp4">
+                    </video> -->
+
+                    <p>After that first in-game test, I saw the potential of the idea, and I knew I had something
+                        special.</p>
+                    <h3>The Hand-Drawn Process</h3>
+                    <p>The design of the queen is based on many actual queens in history, such as <a
+                            href="https://www.rct.uk/collection/404444/elizabeth-i-when-a-princess"
+                            target="_blank">William Scrotts' painting of Elizabeth I</a>, a
+                        <a href="https://commons.wikimedia.org/wiki/File:The_Young_Queen_Victoria.jpg"
+                            target="_blank">young Queen Victoria</a>, and
+                        <a href="https://www.purecostumes.com/FM58372/queen-elizabeth-adult-costume.html"
+                            target="_blank">various Halloween costumes of queens</a> I found on Google. I was a
+                        big fan of the warm tones used in the clothing, and decided to give her a red and gold color
+                        palette. Her actual visual design is loosely based off of how I would think Americans in the
+                        1930's would picture an evil English queen, but modernized a bit to fit today's standards.
+                    </p>
+                    <p>In order to properly animate the queen, I bought a cheap light pad, some tracing paper, and I got
+                        to work. My process was to pencil draw each frame (&quot;pencil test&quot;), scan frames to
+                        digital images with a
+                        printer/scanner, intsert the images into a video, look for issues in the animation make any
+                        adjustments needed, repeat until the
+                        movement was where I wanted it. I then trace over each frame on another sheet with .3 mm and
+                        .1mm PITT Artist Pens (&quot;inking&quot;), scan each frame again, and then color digitally
+                        with Paint.NET.</p>
+
+                    <p>In total, the animation clocked in at about 80-90 frames, with there being about 160 drawings, as
+                        each frame had both a pencil and inked version. It was a long process that took about a month,
+                        but
+                        the final result was such a
+                        good imitation of the 1930's style. Many people who played the map did not realize that it was
+                        original animation with an original character. Some even thought that I ripped the
+                        animation straight from &quot;Cuphead&quot;, which in my opinion means I did a pretty good job.
+                    </p>
+                    <div class="project-video"> <iframe src="https://www.youtube.com/embed/E6Qy-kO8ksE"
+                            allowfullscreen></iframe></div>
+
+                    <div class="queen-concept-grid">
+                        <img src="media/queen-concept1.jpg" alt="Concept art of the Queen" class="queen-concept">
+                        <img src="media/queen-concept2.jpg" alt="More concept art of the queen" class="queen-concept">
+                    </div>
+                    <p>Concept art of the queen. Notice the old version of &quot;Scarlet Meadow&quot; in the top right
+                        of the first image. She later starred in her own game of the same name!</p>
+
+                    <h3>That's Not All, Folks</h3>
+                    <p>As a map developed for an April Fools celebration, it has plenty more to offer than just the boss
+                        fight. The map is filled to the brim with minigames, jokes, references, and all sorts of fun
+                        little
+                        knick knacks. While the boss fight was the main focus, these smaller
+                        moments are what support the map, and they made sure the in game voice chat was filled with
+                        bursts of laughter.
+                    </p>
+                    <img src="media/queen-logic.jpg" alt="Map entities used for the Queen boss fight"
+                        class="queen-logic">
+                    <p>A look at just some of the map logic/entities used for the queen boss fight and minigames. I
+                        really tried to
+                        stay organized by categorizing things into columns.</p>
+                    <h3>The Result</h3>
+                    <p>On April 10th, 2018 I woke up to a surprise message from popular
+                        YouTuber, <a href="https://twitter.com/RTGameCrowd" target="_blank">RTGame Daniel</a>, saying he
+                        was releasing a video about my map. Since then, RTGame Daniel has amassed an enormous following
+                        on YouTube and Twitch, and the small success of my map has
+                        encouraged me to keep going until I stumble upon my next great idea. I am very appreciative of
+                        RTGame, his community, and the opportunities they opened up for me. You can watch his video,
+                        which shows the map in good detail, below.
+                    </p>
+
+                    <p>Queen Elizabeth III was the first time I had done a large scale project based on hand-drawn
+                        animation, and those techniques and skills can be seen influencing my future projects
+                        such as Neon Pong and Scarlet Meadow.
+                    </p>
+                    <div class="project-video"> <iframe src="https://www.youtube.com/embed/YC8Av-lOFk8"
+                            allowfullscreen></iframe></div>
+
+
+                    <p> <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1764818756" target="_blank"
+                            class="link-button">View on Steam Workshop</a></p>
+                    <p><img src="media/queen-footer.png" alt="Cartoon versions of the Team Fortress 2 characters"
+                            class="neon-pong-background"></p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="neon-pong-modal" class="modal" onclick="closeModalByClickingOffIt(event)">
+            <div class="modal-inner">
+                <button class="close-modal-button" onclick="closeModal()">&#10094;</button>
+                <div class="modal-desc">
+                    <h2>Neon Pong</h2>
+                    <h3 class="subtitle">Academic/Personal, April - May 2019</h3>
+                    <p>A side-scrolling, singleplayer game where you return attacks from a "Pong" based enemy in urban
+                        environments. I developed the game with a partner using Java and its built-in libraries.
+                        The game features traditional, hand-drawn animation and a bold comic book style made by me. Neon
+                        Pong had a very quick development cycle and some technical hurdles, which affected all aspects
+                        of the project.
+                    </p>
+                </div>
+                <img src="media/neon-pong-banner.jpg" alt="Neon Pong logo" class="banner">
+                <div class="modal-desc">
+                    <h3>A Dynamic Take on an Old Classic</h3>
+                    <p>In Neon Pong, your goal is to win a Pong game, but this time you control a physical character
+                        rather than a simple bar/paddle. Everytime you hit the ball, its speed increases and you built
+                        up a special meter. The game required physics, precise movement, and fast graphics.
+                        My partner and I started by developing a simple update-render cycle that
+                        took advantage of multiple threads to display graphics. The game needed to run at a frame rate
+                        of at least 30-60 frames per second, and it needed to do this on the school computers. Due to
+                        this, the game's resolution is locked at 720p, and it limits how many images we can render at
+                        once.
+                    </p>
+
+                    <p>I then developed the physics and collisions systems, which were not as optimized as they could
+                        have been,
+                        as the collisions used a lot of &quot;pixel perfect&quot; calculations for basic rectangle
+                        hitboxes. Of course, after the fact we realize we should have used the more efficient
+                        Axis-Aligned Bounding Box collisions, which I do use in later projects. I also developed an
+                        external &quot;Animation
+                        Viewer&quot; tool in Java that lets me add images to an animation as frames, customize their
+                        order, and dynamically adjust the speed of the animations. This let me quickly scan pencil tests
+                        and immediately load them into the tool to find and
+                        fix any janky movement. It also allowed me to fine-tune the speed of the animation so they could
+                        go directly into the game.</p>
+
+                    <!-- <video muted loop playsinline controls poster="media/neon-pong-demo-p.jpg" class="inline-video">
+                        <source class="fullsize" src="media/neon-pong-demo.mp4" type="video/mp4">
+                    </video> -->
+                    <h3>Hand-Drawn Animation with Comic Book Inspiration</h3>
+                    <p>With this games very quick development cycle, I had to cut some corners on the animation. The
+                        longest hand-drawn animations were the run
+                        cycles, clocking in at only 6 frames each (not including the electric-shock effect, which is 20
+                        frames but was done digitally). All other animations were just 1 frame poses. This made all
+                        of the movement feel very snappy, but that actually meshed really well with the fast, precise
+                        gameplay. I also applied a
+                        halftone filter to everything, which was a really cheap and effective method to add some much
+                        needed texture to otherwise flat drawings, and it made everything look like it came straight
+                        from a comic book.
+                    </p>
+                    <!-- <video muted loop playsinline controls poster="media/neon-pong-animation-reel-p.jpg"
+                        class="inline-video">
+                        <source class="fullsize" src="media/neon-pong-animation-reel.mp4" type="video/mp4">
+                    </video> -->
+                    <div class="neon-pong-image-grid">
+                        <img src="media/neon-pong-animation1.jpg"
+                            alt="The tracing paper inked drawings used in animation" class="neon-pong-image">
+                        <img src="media/neon-pong-animation2.jpg"
+                            alt="The tracing paper inked drawings used in animation" class="neon-pong-image">
+                    </div>
+
+
+                    <h3>Detailed Backgrounds in a 2D Scene</h3>
+                    <p>While the animation was hand-drawn, I did not have time to draw or paint backgrounds, so I made
+                        them by creating maps in Team Fortress 2. These were dioramas of sorts that were only seen from
+                        one angle, and they were originally split up into layers for a parallax scrolling effect, but
+                        this got cut due to optimization concerns. Using TF2 as a base let me quickly add lighting and
+                        use premade assets, which gave the background detail in a very short timespan. I also
+                        applied halftone filters here so they were mesh well with the animation.
+                        <img src="media/neon-pong-rooftops.png" alt="Background for the Rooftops stage."
+                            class="neon-pong-background">
+                        <img src="media/neon-pong-underpass.png" alt="Background for the Underpass stage."
+                            class="neon-pong-background">
+                        An animated version of the Underpass stage is used as the background for this site! Click
+                        &quot;View Background&quot; on the homepage to see it!</p>
+                    <h3>The Result</h3>
+                    <p>Compared to my other projects, Neon Pong is definitely smaller content wise. But being one of the
+                        first games that I built entirely from scratch, having such a small development cycle, and being
+                        one of the last major projects I did during my senior year of high school, it holds a special
+                        place in my heart. Our teacher gave us an immediate 100&#37; on the graphics, but docked us a
+                        couple
+                        points on the game, as it was a little too fast and difficult for her. The characters of Neon
+                        Pong, Electra and Suit, will return as part of a much larger ensemble of characters in Neon
+                        Heights.</p>
+                    <p> <a href="https://drive.google.com/file/d/1VCiBw_a8V_ODqWOT8RtuWczoc_B88SSI/view" target="_blank"
+                            class="link-button">Download the game</a></p>
+                    <div class="gif-grid">
+                        <img src="media/electra-run.gif" alt="Running animation of Electra" class="animation-gif">
+                        <img src="media/suit-run.gif" alt="Running animation of Suit" class="animation-gif">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="neon-heights-modal" class="modal" onclick="closeModalByClickingOffIt(event)">
+            <div class="modal-inner">
+                <button class="close-modal-button" onclick="closeModal()">&#10094;</button>
+                <div class="modal-desc">
+                    <h2>Neon Heights</h2>
+                    <h3 class="subtitle">Personal, February 2019 - Current</h3>
+                    <p>A local and online multiplayer game currently being developed in Unity. Two teams of four players
+                        pick between eight different unique characters to play in this intense Team Hand Ball inspired
+                        sport, but with more platforming, fighting, and teamwork. This project has gone through many
+                        prototypes, I have programmed menus and UI, local multiplayer, and game logic, and I have
+                        designed characters and environments for the project.</p>
+                </div>
+                <img src="media/neon-heights-banner.jpg" alt="Neon Heights logo in front of night time city"
+                    class="banner">
+                <div class="modal-desc">
+                    <h3>The Spark</h3>
+                    <p>Concepts for Neon Heights date back to November 2018, when I first designed the
+                        &quot;Electra&quot; character, which sparked the whole idea. Two teams try to get a ball in the
+                        other
+                        team's goal and intense back-and-forth gameplay ensues with movement systems that can be comboed
+                        together. Each character has a unique &quot;fluorescent ability&quot; that charges up based on
+                        passes made to teammates. These abilities can range from building defensive walls to flipping
+                        the gravity of the stage.
+                    </p>
+
+                    <p>Besides the gameplay, I really want to focus on the characterization of the game. I want to
+                        design eight very special characters, rather than a hundred unmemorable ones. The game takes
+                        place in a variety of urban environments such as neon-lit rooftops and overgrown underpasses,
+                        but its all set in one city that reeks of inequality. The name &quot;Neon Heights&quot; is a pun
+                        off of &quot;neon lights&quot;, but the &quot;Heights&quot; refers to not only the large
+                        skyscrapers of the city, but also the social differences between people in the city, like a
+                        social/financial hierarchy or totem pole. The teams are based around
+                        &quot;Champions VS Underdogs&quot;, and while there are no gameplay differences between the
+                        teams, visually they will appear different, with the Champions repping a bright white, almost
+                        golden color scheme, and the Underdogs repping a darker, but more colorful color scheme.
+                    </p>
+                    <img src="media/neon-heights-characters.jpg" alt="the Neon Heights cast of characters"
+                        class="queen-logic">
+
+                    <h3>Prototypes</h3>
+                    <p>I started developing prototypes on and off in my free time in Feburary 2019, and after a couple
+                        play tests with my friends at the end of 2019, it proves to be a fun concept that just needs
+                        some ironing out. In June 2020, my friend and I started working on an online multiplayer version
+                        using Mirror Networking, an open source networking system for Unity.
+                    </p>
+                    <img src="media/neon-heights-css.jpg" alt="Neon heights character and team select screen"
+                        class="queen-logic">
+                    <p>A prototype of the character and team select screen. Players can join the game by pressing A on
+                        their gamepad, and they can move their cursor around and make selections.</p>
+
+                    <div class="neon-heights-concept-grid">
+                        <img src="media/neon-heights-concept2.jpg" alt="Concept art of Poppy the Popstar"
+                            class="queen-concept">
+                        <img src="media/neon-heights-concept1.jpg" alt="Concept art of Electra, the Urban Underdog"
+                            class="queen-concept">
+                    </div>
+                    <p>Concept art of Poppy the Popstar and Electra the Urban Underdog.</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Contact:<br>
+                nickmbaker1@gmail.com<br><br>
+
+                Website by Nick Baker, 2020.<br>
+                Roboto font by Christian Robertson, obtained through Google.
+            </p>
+        </footer>
+    </main>
+
+    <script>
+        let contentPanels = [];
+        let shownContentHeight = document.getElementById("shown-content").scrollHeight;
+        let activePanel = "";
+        let activeModal = "";
+        let dioramaIndex = 0;
+
+        function init() {
+            // getHeights();
+            document.getElementById("projects-button").click();
+            scarletDioramaSlideshow();
+            document.querySelector('footer').style.opacity = 1;
+            document.getElementById("shown-content").style.opacity = 1;
+        }
+
+        function getHeights() {
+            console.log(document.getElementById("shown-content").scrollHeight);
+            console.log(document.getElementById("projects-content").scrollHeight);
+            console.log(document.getElementById("artwork-content").scrollHeight);
+            console.log(document.getElementById("design-content").scrollHeight);
+            console.log(document.getElementById("shown-content").scrollHeight);
+
+            // let noHeightPanels = document.querySelectorAll("no-height");
+            // for (i = 0; i < tabButtons.length; i++) {
+            //     noHeightPanels[i].style.height = "0";
+            // }
+        }
+
+        function closeModalByClickingOffIt(event) {
+            if (event.target.className == "modal") {
+                closeModal();
+            }
+        }
+
+        function openModal(modalName) {
+            if (activeModal != "")
+                return;
+            document.getElementById("title-nav").style.transform = "translateX(-100vw)";
+            document.getElementById("main-header").style.transform = "translateX(-100vw)";
+            document.getElementById("shown-content").style.transform = "translateX(-100vw)";
+            document.querySelector("footer").style.transform = "translateX(-100vw)";
+            activeModal = modalName;
+            if (activeModal == "scarlet-meadow-modal")
+                scarletDioramaSlideshow();
+            document.body.style.overflow = "hidden";
+            document.getElementById(activeModal).style.visibility = "visible";
+            document.getElementById(activeModal).style.transform = "translateX(0)"
+        }
+
+        function closeModal() {
+            document.getElementById("title-nav").style.transform = "translateX(0)";
+            document.getElementById("main-header").style.transform = "translateX(0)";
+            document.getElementById("shown-content").style.transform = "translateX(0)";
+            document.querySelector("footer").style.transform = "translateX(0)";
+            document.body.style.overflow = "auto";
+            document.getElementById(activeModal).scrollTo(0, 0);
+            document.getElementById(activeModal).style.visibility = "hidden";
+            document.getElementById(activeModal).style.transform = "translateX(100vw)"
+            let videos = document.getElementsByClassName("inline-video");
+            for (let i = 0; i < videos.length; i++) {
+                videos[i].pause();
+            }
+            activeModal = "";
+            resizeShownContent();
+        }
+
+        function scarletDioramaSlideshow() {
+            if (activeModal != "scarlet-meadow-modal")
+                return;
+            document.getElementById("scarlet-diorama").src = "media/scarlet-environment" + dioramaIndex + ".png";
+            dioramaIndex++;
+            if (dioramaIndex == 4) {
+                dioramaIndex = 0;
+            }
+            setTimeout(scarletDioramaSlideshow, 2500);
+        }
+
+        function slideshowGoLeft(slideshowName) {
+            let slideshowElement = document.getElementById("level-" + slideshowName);
+            let currentIndex = slideshowElement.getAttribute("src").substring(12 + slideshowName.length + 1, slideshowElement.getAttribute("src").length - 4);
+            if (currentIndex == 0) {
+                currentIndex = 3;
+            } else {
+                currentIndex--;
+            }
+            slideshowElement.src = "media/levels/" + slideshowName + currentIndex + ".jpg";
+        }
+
+        function slideshowGoRight(slideshowName) {
+            let slideshowElement = document.getElementById("level-" + slideshowName);
+            let currentIndex = slideshowElement.getAttribute("src").substring(12 + slideshowName.length + 1, slideshowElement.getAttribute("src").length - 4);
+            if (currentIndex == 3) {
+                currentIndex = 0;
+            } else {
+                currentIndex++;
+            }
+            slideshowElement.src = "media/levels/" + slideshowName + currentIndex + ".jpg";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        // window.onclick = function (event) {
+        //     if(activeModal != ""){
+        //         closeModal(activeModal);
+        //     }
+        // }
+
+        function openSection(evt, sectionName) {
+            if (activeModal != "")
+                return;
+            // vars for use later
+            var i, tabContent, tabButtons;
+            // document.getElementById("projects-content").style.height = "100px";
+            // console.log(document.getElementById("projects-content").offsetHeight);
+            // console.log(document.getElementById("artwork-content").offsetHeight);
+            // hide all content panels
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                document.getElementById(tabContent[i].id).style.transform = "scaleY(0)";
+                // document.getElementById(tabContent[i].id).style.transform = "translateY(-200vh)";
+                // document.getElementById(tabContent[i].id).style.height = "0";
+                document.getElementById(tabContent[i].id).style.opacity = 0;
+                document.getElementById(tabContent[i].id).style.visibility = "hidden";
+                document.getElementById(tabContent[i].id).style.overflow = "hidden";
+                // document.getElementById(tabContent[i].id).style.display = "none";
+            }
+
+            // remove all buttons from "active"
+            tabButtons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].className = tabButtons[i].className.replace(" active", "");
+            }
+
+            // fade in the current panel, and make its button 'active'
+            // document.getElementById(sectionName).style.display = "block";
+            document.getElementById(sectionName).style.transform = "scaleY(1)";
+            document.getElementById(sectionName).style.opacity = 1;
+            document.getElementById(sectionName).style.visibility = "visible";
+            document.getElementById(sectionName).style.height = "100%";
+            // document.getElementById(sectionName + "-content").style.transform = "translateY(0)";
+            document.getElementById(sectionName + "-content").style.transform = "scaleY(1)";
+            document.getElementById(sectionName + "-content").style.opacity = 1;
+            document.getElementById(sectionName + "-content").style.visibility = "visible";
+            document.getElementById(sectionName + "-content").style.overflow = "visible";
+            document.getElementById(sectionName + "-button").className += " active";
+            activePanel = sectionName;
+            resizeShownContent();
+            //positionFooter();
+            //positionFooter();
+            // evt.currentTarget.className += " active";
+            //document.getElementById("shown-content").scrollIntoView();
+        }
+        window.addEventListener('resize', resizeShownContent);
+        window.addEventListener('scroll', resizeShownContent);
+        window.addEventListener('fullscreenchange', resizeShownContent);
+        window.addEventListener('fullscreenerror', resizeShownContent);
+
+        //document.addEventListener('touchmove', resizeShownContent);
+        //document.addEventListener('gesturechange', resizeShownContent);
+        // window.addEventListener('fullscreenchange', positionFooter);
+        // window.addEventListener('maximize', positionFooter);
+        // function positionFooter(){
+        //     document.querySelector('footer').style.top = (document.querySelector('footer').scrollHeight + document.body.scrollHeight).toString() + "px";
+        //     document.querySelector('footer').style.width = "100%";
+        //     console.log(document.body.scrollHeight);
+        // }
+
+        function scrollTest() {
+
+        }
+
+        function resizeShownContent() {
+            if (activeModal != "")
+                return;
+            if (document.getElementById("shown-content") == null || document.getElementById(activePanel + "-content") == null) {
+                setTimeout(resizeShownContent, 1000);
+                return;
+            }
+
+
+            document.getElementById(activePanel + "-content").style.height = "1";
+            // console.log(document.getElementById(activePanel + "-content").scrollHeight);
+
+            document.getElementById("shown-content").style.height = document.getElementById(activePanel + "-content").scrollHeight + "px";
+            document.getElementById(activePanel + "-content").style.height = "0";
+            //setTimeout(resizeShownContent, 100);
+        }
+
+        function viewBackground() {
+            if (activeModal != "")
+                return;
+            document.getElementById("title-nav").style.transform = "translateX(-100vw)";
+            document.getElementById("main-header").style.transform = "translateX(-100vw)";
+            document.getElementById("shown-content").style.transform = "translateX(-100vw)";
+            document.getElementsByClassName("background-video")[0].style.opacity = "1";
+            document.getElementsByClassName("background-overlay")[0].style.opacity = ".1";
+            document.getElementsByClassName("close-background-button")[0].style.visibility = "visible";
+            document.getElementsByClassName("close-background-button")[0].style.transform = "translateX(0)";
+            document.querySelector("footer").style.transform = "translateX(-100vw)";
+            document.getElementById("shown-content").style.height = "0";
+            scrollTo(0, 0);
+        }
+
+        function closeBackground() {
+            document.getElementById("title-nav").style.transform = "translateX(0)";
+            document.getElementById("main-header").style.transform = "translateX(0)";
+            document.getElementById("shown-content").style.transform = "translateX(0)";
+            document.querySelector("footer").style.transform = "translateX(0)";
+            document.getElementById("shown-content").style.height = "1";
+            document.getElementsByClassName("background-video")[0].style.opacity = ".2";
+            document.getElementsByClassName("background-overlay")[0].style.opacity = ".03";
+            document.getElementsByClassName("close-background-button")[0].style.visibility = "hidden";
+            document.getElementsByClassName("close-background-button")[0].style.transform = "translateX(-100vw)";
+            resizeShownContent();
+            scrollTo(0, 0);
+        }
+    </script>
+</body>
+
+</html>

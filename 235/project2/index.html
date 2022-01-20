@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nick Baker Project 2 - Giphy Finder</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles/mainStyle.css">
+    <script src="js/main.js"></script>
+</head>
+
+<body onload="init()">
+    <header id="main-header">
+        <h1>Giphy Finder</h1>
+        <div class="header-author">IGME 235</div>
+    </header>
+    <main>
+        <div class="message"></div>
+        <nav>
+            <button class="tab-button active" onclick="openSection('trending')"
+                id="trending-tab-button">Trending</button>
+            <button class="tab-button" onclick="openSection('search')" id="search-tab-button">Search</button>
+            <button class="tab-button" onclick="openSection('favorites')" id="favorites-tab-button">Favorites</button>
+        </nav>
+
+        <section id="shown-content">
+            <div id="trending-content" class="tab-content">
+                <h2>Trending</h2>
+                <div id="trending-gifs-display-grid" class="gif-display-grid">
+
+                </div>
+                <div id="trending-status" class="status"></div>
+                <button id="load-more-trending" class="load-more-button" onclick="loadMore('trending')">Load More</button>
+            </div>
+
+            <div id="search-content" class="tab-content">
+                <h2>Search</h2>
+                <div id="search-widgets-area">
+                    <div id="search-options">
+                        <div class="search-bar">Search: <input id="search-input" type="text" autofocus value="Keywords" /></div>
+                        <div class="recency-dropdown">
+                            Recency Filter: 
+                            <select id="recency">
+                                <option value="week">Last Week</option>
+                                <option value="month1">Last Month</option>
+                                <option value="month6">Last 6 Months</option>
+                                <option value="year1">Last Year</option>
+                                <option value="year2">Last 2 Years</option>
+                                <option value="year5">Last 5 Years</option>
+                                <option value="all" selected>All Time</option>
+                            </select>
+                        </div>
+    
+                        <div id="rating-dropdown">
+                            Max Rating: 
+                            <select id="rating">
+                                <option value="g">G</option>
+                                <option value="pg">PG</option>
+                                <option value="pg-13">PG-13</option>
+                                <option value="r">R</option>
+                                <option value="" selected>All</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="find-gifs-button" onclick="searchButtonClick()">Find Gifs &#10095;</button>
+                </div>
+                <div id="search-status" class="status"></div>
+                <div id="search-gifs-display-grid" class="gif-display-grid">
+
+                </div>
+                <div id="search-status-bottom" class="status"></div>
+                <button id="load-more-search" class="load-more-button" onclick="loadMore('search')">Load More</button>
+            </div>
+
+            <div id="favorites-content" class="tab-content">
+                <h2>Favorites</h2>
+                <div id="favorites-status" class="status"></div>
+                <div id="favorites-gifs-display-grid" class="gif-display-grid">
+
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+</body>
+
+</html>

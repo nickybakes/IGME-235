@@ -6,170 +6,1345 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="media/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="media/favicon-16x16.png" sizes="16x16" />
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="homePageStyle.css">
-    <title>Nick Baker Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <title>Nick Baker Game Development and Design Portfolio</title>
 </head>
 
-<body>
+<body onload="init()">
+    <header id="main-header">
+        <h1>Nick Baker</h1>
+        <div class="header-contact">nickmbaker1@gmail.com</div>
+    </header>
+    <button class="tab-button close-modal-button" onclick="closeModal()">&#10094;</button>
     <main>
-        <header>
-            <video autoplay muted loop playsinline src="media/website-intro-video-1080.mp4"
-                poster="media/front-graphic.jpg" id="intro-video">
-                <img src="media/front-graphic.jpg" alt="Nick Baker: artist, programmer, and designer.">
-            </video>
-            If you are not seeing a video, click <a href="media/website-intro-video-1080.mp4">here</a> to watch it.
-            <h1>Nick Baker's Portfolio</h1>
-            <b>Contact:</b> nickmbaker1@gmail.com
-        </header>
+        <video preload autoplay muted loop playsinline class="background-video"
+            poster="media/website-background-video-1080-simple-p.jpg">
+            <source class="fullsize" src="media/website-background-video-1080-simple.mp4" type="video/mp4">
+        </video>
+        <img src="media/underpass-halftone3.png" loading="lazy" alt="background image of street underpass"
+            class="background-overlay">
 
-
-        <div id="projects">
-            <h2>Projects</h2>
-            <section id="projectList">
-                <div class="project-video"> <iframe src="https://www.youtube.com/embed/Hd5D4lWR8uQ"
-                        allowfullscreen></iframe></div>
-                <div class="description">
-                    <h3>Scarlet Meadow</h3>
-                    <h4>Feb 2020 - May 2020</h4>
-                    <p>A 2D platformer, beat-em-up game with traditional, hand-drawn animation,
-                        developed in C# and Monogame. I worked with a team as the lead artist, developed a
-                        physics system for objects in the game, and designed and developed a robust, graphical level
-                        editor using C# and Monogame for content production for the game. The game features traditional,
-                        hand-drawn animation with inspiration from comic books and Cuban architecture.</p>
-                    <a href="https://drive.google.com/file/d/1RlL1hsU5aCFjWXO2nUsQ-MGaU93lmQs7/view" target="_blank"
-                        class="projectLink">Download the game and level editor</a>
+        <section id="title-nav">
+            <div id="shown-description">
+                <div id="projects" class="tab-content">
+                    <h2>Projects</h2>
+                    <p>Professional, personal, and academic works done solo or in teams of various sizes. Click the
+                        displays to see more in-depth info about what I contributed to each project.
+                    </p>
                 </div>
 
-
-                <div class="description">
-                    <h3>Cursed Cove</h3>
-                    <h4>Apr 2018 - Oct 2018</h4>
-                    <p>In a team of 12, I helped developed the map "Cursed Cove" for Valve Software's "Team Fortress 2".
-                        The map was <strong>bought and featured by Valve</strong> as a part of the Halloween "Scream Fortress"
-                        event in 2018. On the team, I helped bring up concepts for the level design, and I developed
-                        parts of the background/skybox of the map.</p>
-                    <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1498584149" target="_blank"
-                        class="projectLink">View on Steam Workshop</a>
-                </div>
-                <div class="project-video"> <iframe src="https://www.youtube.com/embed/Y8goSGrh_mg"
-                        allowfullscreen></iframe></div>
-
-
-                <div class="project-video"> <iframe src="https://www.youtube.com/embed/YC8Av-lOFk8"
-                        allowfullscreen></iframe></div>
-                <div class="description">
-                    <h3>Queen Elizabeth III in "A Royal Pain in the Arse"</h3>
-                    <h4>Feb 2018 - Apr 2018</h4>
-                    <p>A Team Fortress 2 map featuring a boss fight with a traditionally, hand-drawn animated character
-                        inspired by 1930's cartoons. The map also features many other gimmicks including minigames,
-                        unlockable power-ups, and many references and jokes.</p>
-                    <a href="https://youtu.be/E6Qy-kO8ksE" target="_blank" class="projectLink">View animation reel</a>
+                <div id="artwork" class="tab-content">
+                    <h2>Artwork</h2>
+                    <p>Various pieces of art I've done in the past few years. Some of these works are large physical
+                        pieces, some are small sketchbook pages, and some are digital.</p>
                 </div>
 
-                <div class="description">
-                    <h3>Neon Pong</h3>
-                    <h4>Apr 2019 - May 2019</h4>
-                    <p>A side-scrolling, singleplayer game where you return attacks from a "Pong"
-                        invasion in urban environments. The game was developed using Java, utilizing built-in Java
-                        libraries, and it features traditional, hand-drawn animation and a bold comic book style. "Neon
-                        Pong" stars two characters, Electra and Suit, from "Neon Heights" (see Ongoing Projects).</p>
-                        <a href="https://drive.google.com/file/d/1VCiBw_a8V_ODqWOT8RtuWczoc_B88SSI/view" target="_blank"
-                        class="projectLink">Download the game</a>
+                <div id="design" class="tab-content">
+                    <h2>Level Design</h2>
+                    <p>I started doing level design as a hobby in 2014 with Team Fortress 2. Since then, I
+                        have expanded my skillset to a varity of design ideas, and I've also done some professional work
+                        with the map <button class="in-text-button" onclick="openModal('cursed-cove-modal')">Cursed
+                            Cove</button>.
+                    </p>
                 </div>
-                <div class="project-video"> <iframe src="https://www.youtube.com/embed/Dlj21kZUnQs?start=30"
-                        allowfullscreen></iframe></div>
-            </section>
+            </div>
 
+            <nav>
+                <div class="tabs">
+                    <button class="tab-button active" onclick="openSection(event, 'projects')"
+                        id="projects-button">Projects</button>
+                    <button class="tab-button" onclick="openSection(event, 'artwork')"
+                        id="artwork-button">Artwork</button>
+                    <button class="tab-button" onclick="openSection(event, 'design')" id="design-button">Level
+                        Design</button>
+                    <button class="tab-button" onclick="window.open('media/nick-baker-resume.pdf','_blank');"
+                        type="button">
+                        Resume</button>
+                </div>
+            </nav>
 
+        </section>
+
+        <div id='spinning-icon-display'>
+            <div class='spinning-icon'></div>
         </div>
 
-        <div id="ongoing-pieces">
-            <h2>Ongoing Projects</h2>
-            <section id="ongoingList">
-                <img class="projectImage" src="media/neon-heights-characters.jpg"
-                    alt="Neon Heights beta character designs, standing in a line">
-                <div class="description">
-                    <h3>Neon Heights</h3>
-                    <h4>Feb 2019 - Current</h4>
-                    <p>A local and online multiplayer game currently being developed in Unity. Two teams of four players
-                        pick between eight different unique characters to play in this intense Team Hand Ball inspired
-                        sport, but with more platforming, fighting, and teamwork. Teams will face off in sprawling,
-                        urban environments such as neon-lit rooftops and overgrown underpasses. Prototypes of the game
-                        were developed with character and level designs, however an updated, online version of the game
-                        is still in development.</p>
+        <section id="shown-content">
+            <div id="projects-content" class="tab-content content-panel no-height">
+                <div class="project-display" onclick="openModal('goat-modal')">
+                    <div class="project-image"><img src="media/project-goat.png" loading="lazy"
+                            alt="Big city with holographic sign that reads Headbang Hospital."></div>
+                    <div class="project-desc">
+                        <h3>That Damn Goat</h3>
+                        <h4>Professional</h4>
+                        <h5>May 2021 - Present</h5>
+                        <p>Level designs and art for a chaotic 4 player party game, devloped at MAGIC Spell Studios
+                            at RIT.</p>
+                    </div> <button class="modal-button" onclick="openModal('goat-modal')">&#10095;</button>
                 </div>
 
-            </section>
-        </div>
+                <div class="project-display" onclick="openModal('headbang-hospital-modal')">
+                    <div class="project-image"><img src="media/project-headband-hospital.png" loading="lazy"
+                            alt="Big city with holographic sign that reads Headbang Hospital."></div>
+                    <div class="project-desc">
+                        <h3>Headbang Hospital</h3>
+                        <h4>Academic/Personal</h4>
+                        <h5>Sep - Dec 2021</h5>
+                        <p>A fanart-environment built with Unreal 5 and Blender based on Velan Studio's
+                            &quot;Knockout City&quot;.</p>
+                    </div> <button class="modal-button" onclick="openModal('headbang-hospital-modal')">&#10095;</button>
+                </div>
+
+                <div class="project-display" onclick="openModal('cursed-cove-modal')">
+                    <div class="project-image"><img src="media/project-cursed-cove.png" loading="lazy"
+                            alt="Davey Jones ghost character in front of pirate bay."></div>
+                    <div class="project-desc">
+                        <h3>Cursed Cove</h3>
+                        <h4>Professional</h4>
+                        <h5>Apr - Oct 2018</h5>
+                        <p>A Team Fortress 2 map developed by a team of 12, bought and featured by Valve Software in the
+                            Halloween 2018 event.</p>
+                    </div> <button class="modal-button" onclick="openModal('cursed-cove-modal')">&#10095;</button>
+                </div>
+
+                <div class="project-display" onclick="openModal('scarlet-meadow-modal')">
+                    <div class="project-image"><img src="media/project-scarlet-meadow.png" loading="lazy"
+                            alt="Scarlet Meadow character and logo in front of city"></div>
+                    <div class="project-desc">
+                        <h3>Scarlet Meadow</h3>
+                        <h4>Academic/Personal</h4>
+                        <h5>Feb - May 2020</h5>
+                        <p>A 2D platformer, beat-em-up with hand-drawn animation and a custom level editor tool, all
+                            built in C# and Monogame.</p>
+                    </div> <button class="modal-button" onclick="openModal('scarlet-meadow-modal')">&#10095;</button>
+                </div>
+
+                <div class="project-display" onclick="openModal('future-fitness-modal')">
+                    <div class="project-image"><img src="media/project-future-fitness.png" loading="lazy"
+                            alt="An orange yoga ball in front of a multicolored fitness center."></div>
+                    <div class="project-desc">
+                        <h3>Future Fitness</h3>
+                        <h4>Academic/Personal</h4>
+                        <h5>Oct - Dec 2020</h5>
+                        <p>A 3D modeled, artistic environment design project built using Maya and Unity.</p>
+                    </div> <button class="modal-button" onclick="openModal('future-fitness-modal')">&#10095;</button>
+                </div>
+
+                <div class="project-display" onclick="openModal('urban-underdog-modal')">
+                    <div class="project-image"><img src="media/project-urban-underdog.png" loading="lazy"
+                            alt="Pixelated car on race track."></div>
+                    <div class="project-desc">
+                        <h3>The Urban Underdog</h3>
+                        <h4>Academic/Personal</h4>
+                        <h5>Nov - Dec 2020</h5>
+                        <p>My own 3D graphics engine, randomly generated racetracks, and more in this browser based
+                            racing game developed entirely in Javascript!</p>
+                    </div> <button class="modal-button" onclick="openModal('urban-underdog-modal')">&#10095;</button>
+                </div>
+
+                <div class="project-display" onclick="openModal('queen-modal')">
+                    <div class="project-image"><img src="media/project-queen.png" loading="lazy"
+                            alt="1930's Queen Elizabeth character in TF2 map"></div>
+                    <div class="project-desc">
+                        <h3>Queen Elizabeth III in &quot;A Royal Pain in the Arse&quot;</h3>
+                        <h4>Personal</h4>
+                        <h5>Feb - Apr 2018</h5>
+                        <p>Traditional, hand-drawn animated characters brought into a Team Fortress 2 map as a boss
+                            fight.</p>
+                    </div> <button class="modal-button" onclick="openModal('queen-modal')">&#10095;</button>
+                </div>
+
+                <div class="project-display" onclick="openModal('neon-pong-modal')">
+                    <div class="project-image"><img src="media/project-neon-pong.png" loading="lazy"
+                            alt="Electra character and Neon Pong logo"></div>
+                    <div class="project-desc">
+                        <h3>Neon Pong</h3>
+                        <h4>Academic/Personal</h4>
+                        <h5>Apr - May 2019</h5>
+                        <p>A side-scrolling, back-and-forth, singleplayer fighting game developed using Java,
+                            built-in Java libraries, and hand-drawn animation.</p>
+                    </div> <button class="modal-button" onclick="openModal('neon-pong-modal')">&#10095;</button>
+                </div>
+
+                <div class="project-display" onclick="openModal('neon-heights-modal')">
+                    <div class="project-image"><img src="media/project-neon-heights.png" loading="lazy"
+                            alt="Neon Heights logo"></div>
+                    <div class="project-desc">
+                        <h3>Neon Heights</h3>
+                        <h4>Personal</h4>
+                        <h5>Feb 2019 - Current</h5>
+                        <p>A local and online multiplayer game currently being developed in Unity.</p>
+                    </div> <button class="modal-button" onclick="openModal('neon-heights-modal')">&#10095;</button>
+                </div>
+            </div>
 
 
-        <div id="artwork">
-            <h2>Artwork</h2>
-            <section id="artworkList">
+            <div id="artwork-content" class="tab-content content-panel no-height">
                 <div class="artPiece">
-                    <img class="artImage" src="media/artwork/cartoons-in-the-city.jpg"
-                        alt="Cartoon characters rendered realistically in an alleyway">
+                    <img class="artImage" src="media/artwork/electra-render-both.jpg" loading="lazy"
+                        alt="Character with purple pony tail and yellow electricity between her hands">
                     <div class="artDescription">
-                        <h5>"Cartoons in the City"</h5>, Gouache, May 2018
+                        <h5>"Electra is Powered Up"</h5>, Digital, Jan 2021
                     </div>
                 </div>
                 <div class="artPiece">
-                    <img class="artImage" src="media/artwork/fruitful-of-flavor.jpg"
-                        alt="Apples and bananas in a still life painting">
+                    <img class="artImage" src="https://imgur.com/EP4zpAi.gif" loading="lazy"
+                        alt="A Fall Guy and Penguin dancing in front of a snowy background">
                     <div class="artDescription">
-                        <h5>"Fruitful of Flavor"</h5>, Oil, Dec 2017
+                        <h5>"Fall Guys Happy Holidays Fan Animation"</h5>, Hand-drawn and digital, Dec 2020
                     </div>
                 </div>
                 <div class="artPiece">
-                    <img class="artImage" src="media/artwork/pepper-and-olive-oil.jpg"
-                        alt="Observational pencil drawing of a wooden pepper shaker and glass olive oil bottle">
+                    <img class="artImage" src="media/artwork/collage-2019.jpg" loading="lazy"
+                        alt="My character sketches from 2019">
                     <div class="artDescription">
-                        <h5>"Pepper and Olive Oil"</h5>, Pencil, Dec 2017
+                        <h5>"2019 Sketch Collage"</h5>, Pencil converted to digital, 2019
                     </div>
                 </div>
-                <div class="artPiece">
-                    <img class="artImage" src="media/artwork/almonds-in-a-jar.jpg"
-                        alt="Observational pencil drawing of almonds in a glass jar">
-                    <div class="artDescription">
-                        <h5>"Almonds in a Jar"</h5>, Pencil, Dec 2017
+                <section id="artworkList">
+                    <div class="artPiece">
+                        <img class="artImage" src="media/artwork/cartoons-in-the-city.jpg" loading="lazy"
+                            alt="Cartoon characters rendered realistically in an alleyway">
+                        <div class="artDescription">
+                            <h5>"Cartoons in the City"</h5>, Gouache, May 2018
+                        </div>
+                    </div>
+                    <div class="artPiece">
+                        <img class="artImage" src="media/artwork/fruitful-of-flavor.jpg" loading="lazy"
+                            alt="Apples and bananas in a still life painting">
+                        <div class="artDescription">
+                            <h5>"Fruitful of Flavor"</h5>, Oil, Dec 2017
+                        </div>
+                    </div>
+                    <div class="artPiece">
+                        <img class="artImage" src="media/artwork/pepper-and-olive-oil.jpg" loading="lazy"
+                            alt="Observational pencil drawing of a wooden pepper shaker and glass olive oil bottle">
+                        <div class="artDescription">
+                            <h5>"Pepper and Olive Oil"</h5>, Pencil, Dec 2017
+                        </div>
+                    </div>
+                    <div class="artPiece">
+                        <img class="artImage" src="media/artwork/almonds-in-a-jar.jpg" loading="lazy"
+                            alt="Observational pencil drawing of almonds in a glass jar">
+                        <div class="artDescription">
+                            <h5>"Almonds in a Jar"</h5>, Pencil, Dec 2017
+                        </div>
+                    </div>
+                    <div class="artPiece">
+                        <img class="artImage" src="media/artwork/imperfect-city.jpg" loading="lazy"
+                            alt="An orthographic ink drawing of a city, following a pattern of red and black buildings">
+                        <div class="artDescription">
+                            <h5>"Imperfect City"</h5>, Pen and Ink, Jan 2018
+                        </div>
+                    </div>
+                    <div class="artPiece">
+                        <img class="artImage" src="media/artwork/steam-city.jpg" loading="lazy"
+                            alt="Industrial studies in red pen. Train cars, silos, and bridges!">
+                        <div class="artDescription">
+                            <h5>"Steam City"</h5>, Red Pen, Oct 2018
+                        </div>
+                    </div>
+                    <div class="artPiece">
+                        <img class="artImage" src="media/artwork/monkeys.jpg" loading="lazy" alt="Monkey's in space.">
+                        <div class="artDescription">
+                            <h5>"Epic Space Monkeys"</h5>, Pencil drawing, digital painting, Nov 2019
+                        </div>
+                    </div>
+                    <div class="artPiece">
+                        <img class="artImage" src="media/artwork/jet.jpg" loading="lazy"
+                            alt="Jet from Lethal League in rollerblades">
+                        <div class="artDescription">
+                            <h5>"Jet from Lethal League Blaze"</h5>, Pencil drawing, digital painting, Aug 2019
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div id="design-content" class="tab-content content-panel no-height">
+                <div class="projects-content">
+                    <div class="project-display" onclick="openModal('goat-modal')">
+                        <div class="project-image"><img src="media/project-goat.png" loading="lazy"
+                                alt="Big city with holographic sign that reads Headbang Hospital."></div>
+                        <div class="project-desc">
+                            <h3>That Damn Goat</h3>
+                            <h4>Professional</h4>
+                            <h5>May 2021 - Present</h5>
+                            <p>Level designs and art for a chaotic 4 player party game, devloped at MAGIC Spell Studios
+                                at RIT.</p>
+                        </div> <button class="modal-button" onclick="openModal('goat-modal')">&#10095;</button>
+                    </div>
+
+                    <div class="project-display" onclick="openModal('headbang-hospital-modal')">
+                        <div class="project-image"><img src="media/project-headband-hospital.png" loading="lazy"
+                                alt="Big city with holographic sign that reads Headbang Hospital."></div>
+                        <div class="project-desc">
+                            <h3>Headbang Hospital</h3>
+                            <h4>Academic/Personal</h4>
+                            <h5>Sep - Dec 2021</h5>
+                            <p>A fanart-environment built with Unreal 5 and Blender based on Velan Studio's
+                                &quot;Knockout City&quot;.</p>
+                        </div> <button class="modal-button"
+                            onclick="openModal('headbang-hospital-modal')">&#10095;</button>
+                    </div>
+
+                    <div class="project-display" onclick="openModal('cursed-cove-modal')">
+                        <div class="project-image"><img src="media/project-cursed-cove.png" loading="lazy"
+                                alt="Davey Jones ghost character in front of pirate bay."></div>
+                        <div class="project-desc">
+                            <h3>Cursed Cove</h3>
+                            <h4>Professional</h4>
+                            <h5>Apr - Oct 2018</h5>
+                            <p>A Team Fortress 2 map developed by a team of 12, bought and featured by Valve Software in
+                                the
+                                Halloween 2018 event.</p>
+                        </div> <button class="modal-button" onclick="openModal('cursed-cove-modal')">&#10095;</button>
+                    </div>
+
+                    <div class="project-display" onclick="openModal('future-fitness-modal')">
+                        <div class="project-image"><img src="media/project-future-fitness.png" loading="lazy"
+                                alt="An orange yoga ball in front of a multicolored fitness center."></div>
+                        <div class="project-desc">
+                            <h3>Future Fitness</h3>
+                            <h4>Academic/Personal</h4>
+                            <h5>Oct - Dec 2020</h5>
+                            <p>A 3D modeled, artistic environment design project built using Maya and Unity.</p>
+                        </div> <button class="modal-button"
+                            onclick="openModal('future-fitness-modal')">&#10095;</button>
+                    </div>
+
+                </div>
+
+
+                <div class="level-display">
+                    <img src="media/levels/sleepers0.jpg" loading="lazy" alt="placeholder" id="level-sleepers"
+                        class="level-slideshow">
+                    <button class="level-slideshow-left-button" onclick="slideshowGoLeft('sleepers')">&#10094;</button>
+                    <button class="level-slideshow-right-button"
+                        onclick="slideshowGoRight('sleepers')">&#10095;</button>
+                    <div class="level-desc">
+                        <h3>Pl Loco</h3>
+                        <h5>Nov 2018 - Current</h5>
+                        <p>An experiment with very angular geometry, crazy heights/platforming, winding pathways, and a
+                            big city
+                            aesthetic in Team Fortress 2. The map reached a playable alpha state in January, 2021.
+                        </p>
                     </div>
                 </div>
-                <div class="artPiece">
-                    <img class="artImage" src="media/artwork/imperfect-city.jpg"
-                        alt="An orthographic ink drawing of a city, following a pattern of red and black buildings">
-                    <div class="artDescription">
-                        <h5>"Imperfect City"</h5>, Pen and Ink, Jan 2018
+
+                <div class="level-display">
+                    <img src="media/levels/fallingwater0.jpg" loading="lazy" alt="placeholder" id="level-fallingwater"
+                        class="level-slideshow">
+                    <button class="level-slideshow-left-button"
+                        onclick="slideshowGoLeft('fallingwater')">&#10094;</button>
+                    <button class="level-slideshow-right-button"
+                        onclick="slideshowGoRight('fallingwater')">&#10095;</button>
+                    <div class="level-desc">
+                        <h3>Vsh Falling Water</h3>
+                        <h5>July - Aug 2018</h5>
+                        <p>An interpretation of Frank Lloyd Wright's &quot;Falling Water&quot; house design, built for
+                            the
+                            asymmetrical, arena gamemode &quot;Versus Saxton Hale.&quot; A minimal amount materials were
+                            used for simplicity,
+                            stylization, and optimization.</p>
                     </div>
                 </div>
-                <div class="artPiece">
-                    <img class="artImage" src="media/artwork/steam-city.jpg"
-                        alt="Industrial studies in red pen. Train cars, silos, and bridges!">
-                    <div class="artDescription">
-                        <h5>"Steam City"</h5>, Red Pen, Oct 2018
+
+                <div class="level-display">
+                    <img src="media/levels/queen0.jpg" loading="lazy" alt="placeholder" id="level-queen"
+                        class="level-slideshow">
+                    <button class="level-slideshow-left-button" onclick="slideshowGoLeft('queen')">&#10094;</button>
+                    <button class="level-slideshow-right-button" onclick="slideshowGoRight('queen')">&#10095;</button>
+                    <div class="level-desc">
+                        <h3>Koth TF2Craps (Queen Elizabeth III)</h3>
+                        <h5>Feb - Apr 2018</h5>
+                        <p>A symmetrical, King of the Hill map that features a hand-drawn animated boss fight in the
+                            center of the map. The layout was designed with the boss' moveset in mind. Read more about
+                            the boss <button class="in-text-button" onclick="openModal('queen-modal')">here.</button>
+                        </p>
                     </div>
                 </div>
-                <div class="artPiece">
-                    <img class="artImage" src="media/artwork/monkeys.jpg" alt="Monkey's in space.">
-                    <div class="artDescription">
-                        <h5>"Epic Space Monkeys"</h5>, Pencil drawing, digital painting, Nov 2019
+
+                <div class="level-display">
+                    <img src="media/levels/chug0.jpg" loading="lazy" alt="placeholder" id="level-chug"
+                        class="level-slideshow">
+                    <button class="level-slideshow-left-button" onclick="slideshowGoLeft('chug')">&#10094;</button>
+                    <button class="level-slideshow-right-button" onclick="slideshowGoRight('chug')">&#10095;</button>
+                    <div class="level-desc">
+                        <h3>De Chug</h3>
+                        <h5>Dec 2017 - Current</h5>
+                        <p>A Counter Strike: Global Offensive map with wacky angles and more complicated routes and
+                            sites than normal maps. For instance, the B site is stacked, meaning players can plant on
+                            the top or bottom, which I have not seen done for a bombsite before. The map is playable and
+                            I
+                            work on it whenever my friends and I feel like playtesting it.</p>
+                        <p><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1232595293" target="_blank"
+                                class="link-button">View on Steam Workshop</a></p>
                     </div>
                 </div>
-                <div class="artPiece">
-                    <img class="artImage" src="media/artwork/jet.jpg" alt="Jet from Lethal League in rollerblades">
-                    <div class="artDescription">
-                        <h5>"Jet from Lethal League Blaze"</h5>, Pencil drawing, digital painting, Aug 2019
+
+                <div class="level-display">
+                    <img src="media/levels/havana0.jpg" loading="lazy" alt="placeholder" id="level-havana"
+                        class="level-slideshow">
+                    <button class="level-slideshow-left-button" onclick="slideshowGoLeft('havana')">&#10094;</button>
+                    <button class="level-slideshow-right-button" onclick="slideshowGoRight('havana')">&#10095;</button>
+                    <div class="level-desc">
+                        <h3>MvM Havana</h3>
+                        <h5>May - July 2017</h5>
+                        <p>Collaboration with Jess &quot;Muddy&quot; Dabbs, a Team Fortress 2 map set in Havana, Cuba.
+                            Players
+                            must fight
+                            off waves of invading robots. We wanted to see how Cuban architecture could fit into the TF2
+                            art style.</p>
+                        <p><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1089026871" target="_blank"
+                                class="link-button">View on Steam Workshop</a></p>
                     </div>
                 </div>
-            </section>
-            <div class="artPiece">
-                <img class="artImage" src="media/artwork/collage-2019.jpg" alt="My character sketches from 2019">
-                <div class="artDescription">
-                    <h5>"2019 Sketch Collage"</h5>, Pencil converted to digital, 2019
+
+                <div class="level-display">
+                    <img src="media/levels/tuggernaug0.jpg" loading="lazy" alt="placeholder" id="level-tuggernaug"
+                        class="level-slideshow">
+                    <button class="level-slideshow-left-button"
+                        onclick="slideshowGoLeft('tuggernaug')">&#10094;</button>
+                    <button class="level-slideshow-right-button"
+                        onclick="slideshowGoRight('tuggernaug')">&#10095;</button>
+                    <div class="level-desc">
+                        <h3>De Tuggernaug</h3>
+                        <h5>Dec 2016</h5>
+                        <p>A Counter Strike: Global Offensive map with experimental height differences and a stretched
+                            layout.
+                            The overall design is very thin and elongated on one axis. The name is like
+                            &quot;Juggernaut&quot; but spelled wrong and with the first and last letters swapped. People
+                            thought it was funny so it stuck.</p>
+                        <p><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=831464087" target="_blank"
+                                class="link-button">View on Steam Workshop</a></p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div id="goat-modal" class="modal" onclick="closeModalByClickingOffIt(event)">
+            <div class="modal-inner">
+                <!-- <button class="close-modal-button" onclick="closeModal()">&#10094;</button> -->
+                <div class="modal-desc">
+                    <h2>That Damn Goat - Level Design and Art</h2>
+                    <h3 class="subtitle">Professional, May 2021 - Present</h3>
+                    <p>
+                        That Damn Goat is 4 player, chaotic party game developed at MAGIC Spell Studios at RIT, and is
+                        planned to be released on the Nintendo Switch and PC. In the game, 4 players run around a 3D
+                        space and try to grab a crown, and hold onto it for as long as possible. Players can be 1 of 12
+                        different characters, each with their own unique abilities and playstyles, and there is an
+                        omnipresent AI controlled goat that will knock players around, change the state of the game,
+                        change which character a player is, etc. The game currently has 8 unique maps that are
+                        randomly picked from, and the goal is to have enough maps so each one can be a character's
+                        unique home area (such as a viking village map for the viking character).
+                    </p>
+                </div>
+                <img src="media/goat-banner.jpg" loading="lazy"
+                    alt="A collage of locations such as a desert, canyon, viking village, castle, and jungle."
+                    class="banner">
+                <div class="modal-desc">
+                    <h3>Inspiration and Size</h3>
+                    <p> When I joined the development team, there were no real level designs made for the project, so I
+                        needed to experiment a lot to figure out what would work for the game. The maps needed to be
+                        complex enough to be replayable, but also simple enough so new players at a party could jump
+                        right in and enjoy. The project leads wanted unique levels that felt weird, as if they could not
+                        have been from any other game. I decided to take inspiration from previous level designs I had
+                        done which used oblique, organic angles for the geometry, rather than square, grid like
+                        structures.
+                    </p>
+
+                    <p> The maps are designed almost like a circle, where players would naturally go around
+                        the outer edge of the map to chase other players and look for items, and go in and out of the
+                        center of the map to evade other players and grab the crown from its spawn point. This was
+                        inspired by other tag-like games and circular maps
+                        such as Royale Fumble from Fall Guys, Mario Chase from Nintendo Land, and Galaxy Burger from
+                        Knockout City. I also kept the maps around the same size, 56x56 units in Unity, only going
+                        larger or smaller if a specific map's design concept was to be that size. This 56x56 size was
+                        decided
+                        after playtesting many sizes, and it keeps players close together and almost constantly engaging
+                        with each other.
+                    </p>
+                    <div class="neon-pong-image-grid">
+                        <img src="media/goat-cq-early-0.jpg" loading="lazy"
+                            alt="A low poly, space station looking level." class="neon-pong-image">
+                        <img src="media/goat-cq-early-0.jpg" loading="lazy"
+                            alt="Inside of a low poly, space station level design." class="neon-pong-image">
+                    </div>
+                    <p> The first map I designed, meant to be a partially indoor &quot;close quarters&quot; map, is not
+                        designed for any specific character. This map features multiple layers, and feels like a
+                        deathmatch level in Quake. We found that not only was the level too big horzizontally, but the
+                        stacked layers made the level feel exponentially larger.
+                    </p>
+                    <h3>Designing for Flow</h3>
+                    <p> Another big design concept used in these levels is the idea of flow. Basically, players should
+                        never have to struggle through the maps, they should be able to hold forward on the
+                        control stick, easily get to anywhere in the map, and not get stuck on any geometry. With the
+                        players only having a control
+                        stick on a gamepad to control the camera, it was also important that they wouldn't be required
+                        to make any big rotations to face the right way. This was difficult to design around, as most of
+                        my 3D level design experience is in games with first person camera controlled with a mouse,
+                        which is much more precise input method for camera control. By designing for flow, however, I
+                        could design the maps for maximum comfort and usability by players. The best map that
+                        shows this is the Viking Village map, which has pathways that constantly loop to one another, so
+                        the players were never going &quot;the wrong way.&quot; I also added invisible barriers to all
+                        the maps, which
+                        fade in when players get close, as falling off and getting put back on the map
+                        constantly broke players' flow.
+                    </p>
+                    <div class="neon-pong-image-grid">
+                        <img src="media/goat-flow-0.jpg" loading="lazy"
+                            alt="A low poly, Viking Village with pathways marked with red lines and a big green dashed circle and a smaller one inside that."
+                            class="neon-pong-image">
+                        <img src="media/goat-flow-1.jpg" loading="lazy"
+                            alt="A low poly, Crusty Canyon with pathways marked with red lines and a green dashed figure 8 shape."
+                            class="neon-pong-image">
+                    </div>
+                    <p>In these images of the Viking Village and Crusty Canyon maps, I marked the main walking pathways
+                        with red, marked jump-pad arcs in blue/yellow, and outlined the overall circular shapes in
+                        green dashed lines. The red paths constantly branch off and connect to one another, so players
+                        always have options for where to go, and this doesn't even include the options players have with
+                        height by jumping on and off ledges. In the Viking Village, there are 2 circular shapes formed
+                        by the paths, with one circle smaller and inide the other. In the Crusty Canyon, the circles are
+                        side by side, like a figure 8.</p>
+                    <h3>Pipeline and Art</h3>
+                    <p>The maps were all built using Probuilder in Unity. They were built as crude greyboxes, and the
+                        specific features of each level were inspired by concept art and turned into gameplay spaces.
+                        For example, I was given concept art of a desert with tall rock structures for the Crusty Canyon
+                        map, which I then turned into a large, central rock with a hole in it, and I positioned
+                        jump-pads that would launch players through the hole to the other side of the map. The greyboxes
+                        were temporarily given textures from various asset packs. Our goal is to
+                        get a vertical slice of the game done soon, which requires one map to be finished with final art
+                        assets. We are art-passing the Viking Village map because it has the most finalized gameplay
+                        design. After being given concept art of what each grey box
+                        structure should look like with final art, I modeled parts of the map in
+                        Blender. The goal is to get feedback from the leads, apply that feedback to the models, then
+                        apply texture
+                        maps given from the sculptors and 2D artists on the team onto the models by UVing them to fit.
+                    </p>
+                    <div class="neon-pong-image-grid">
+                        <img src="media/goat-art-0.jpg" loading="lazy"
+                            alt="A model of a viking building, with a hay, steep sloped roof, and wooden walls."
+                            class="neon-pong-image">
+                        <img src="media/goat-art-1.jpg" loading="lazy"
+                            alt="A model of a viking building with its wireframe shown." class="neon-pong-image">
+                    </div>
+                    <p>This is the quick, first translation of concept art to model. Specific pieces like the
+                        dragon-looking decoration on the roof will be sculpted by team members in the future. This model
+                        is still work in progress, so topology and optimization is not final.</p>
+                    <h3>The Current Results</h3>
+                    <p>These are the current greyboxes of each playable map in the game.</p>
+                    <div class="neon-pong-image-grid">
+                        <img src="media/goat-map-0.jpg" loading="lazy"
+                            alt="A castle like structure with a broken yellow pillar." class="neon-pong-image">
+                        <img src="media/goat-map-1.jpg" loading="lazy" alt="2 wooden viking buildings in a village."
+                            class="neon-pong-image">
+                    </div>
+                    <p>Close Quarters and Viking Village.</p>
+                    <div class="neon-pong-image-grid">
+                        <img src="media/goat-map-2.jpg" loading="lazy"
+                            alt="A jungle with a purple tree and an orange tree." class="neon-pong-image">
+                        <img src="media/goat-map-3.jpg" loading="lazy"
+                            alt="A large rock modeled after a shark's head, overlooking a lagoon."
+                            class="neon-pong-image">
+                    </div>
+                    <p>Jungle Heights and Water Party.</p>
+                    <div class="neon-pong-image-grid">
+                        <img src="media/goat-map-4.jpg" loading="lazy"
+                            alt="An orange canyon with large, red rock structures." class="neon-pong-image">
+                        <img src="media/goat-map-5.jpg" loading="lazy"
+                            alt="An abandoned construction site with half pipes and scaffolding."
+                            class="neon-pong-image">
+                    </div>
+                    <p>Crusty Canyon and Skater Station.</p>
+                    <div class="neon-pong-image-grid">
+                        <img src="media/goat-map-6.jpg" loading="lazy"
+                            alt="A large desert with an abandoned boat stuck between 2 dunes." class="neon-pong-image">
+                        <img src="media/goat-map-7.jpg" loading="lazy"
+                            alt="Inside of a castle/church with a stained glass window of a rat king."
+                            class="neon-pong-image">
+                    </div>
+                    <p>Desert Dunes and Ratsle Siege.</p>
                 </div>
             </div>
         </div>
+
+        <div id="headbang-hospital-modal" class="modal" onclick="closeModalByClickingOffIt(event)">
+            <div class="modal-inner">
+                <!-- <button class="close-modal-button" onclick="closeModal()">&#10094;</button> -->
+                <div class="modal-desc">
+                    <h2>Headbang Hospital/&quot;The Devil's Cove&quot;</h2>
+                    <h3 class="subtitle">Academic/Personal, Sep - Dec 2021</h3>
+                    <p>
+                        An artistic environment built using Blender and Unreal 5. In this project, I created trim sheets
+                        and modular assets to build a lively city in Epic Games' Unreal 5 engine. The style for the city
+                        was inspired by Velan Studio's game &quot;Knockout City&quot; (KO City) and its &quot;future
+                        fifties&quot; aesthetic, as I call it. As the project
+                        developed, I ended up turning the whole thing into a fan-art piece for KO City about a fanmade
+                        part of the city known as The Devil's Cove, the name of which I based off of a
+                        song in the KO City Soundtrack. It features the environment, my own lore for the environment,
+                        and a fanmade message from the game's DJ narrator, which my friend Kieran Newell recorded an
+                        impression of for the project. In this project I focused more on the artistic and narrative side
+                        of an environment, rather than the gameplay design of a level.
+                    </p>
+                </div>
+                <img src="media/headbang-hospital-banner.jpg" loading="lazy"
+                    alt="A cityscape with the text Headbang Hospital, The Devil's Cove." class="banner">
+                <div class="modal-desc">
+                    <h3>Textures and Trim Sheets</h3>
+                    <p> I started the project by grabbing tons of screenshots of The Hideout in KO City. KO City's
+                        aesthetic features bright red bricks, and bold, warm lighting which reflects off of different
+                        metalic, stone, and brick materials. I wanted to interpret this style into my project, so I
+                        started by making a simple brick texture. I payed extra attention to the various shapes of the
+                        bricks in game, as some of the bricks have oblique edges to give them a more cartoonish,
+                        stylized look. I also made a trim sheet of various brick, concrete, and metal patterns.
+                        Corresponding normal, roughness, and metalness maps were also made for these materials. These
+                        texture maps were all hand drawn using Krita and its wrap around view mode so I could make the
+                        textures tile correctly.
+                    </p>
+                    <div class="headbang-texture-grid">
+                        <img src="media/headbang-texture-0.jpg" loading="lazy" alt="A stylized brick texture"
+                            class="headbang-texture-image">
+                        <img src="media/headbang-texture-1.jpg" loading="lazy"
+                            alt="A trim sheet featuring various brick, concrete, and metal patterns"
+                            class="headbang-texture-image">
+                        <img src="media/headbang-texture-2.jpg" loading="lazy" alt="A concrete brick pattern"
+                            class="headbang-texture-image">
+                        <img src="media/headbang-texture-3.jpg" loading="lazy"
+                            alt="A graffiti pattern with orange, white, blue, and yellow stripes."
+                            class="headbang-texture-image">
+                    </div>
+                    <p>From left to right, top to bottom: Brick texture, Brick/Concrete/Metal Trim Sheet, Concrete
+                        texture, and Graffiti texture.</p>
+                    <h3>Modular Facades and Buildings</h3>
+                    <p>Using Blender, I modeled different building assets such as facades, corners, and roofs. I UV'd
+                        these to utilize the different textures I had made previously and I managed to get many
+                        different uses out of a small range of textures. Each building asset was made with
+                        interchangable
+                        textures in mind, so two buildings could use the same models, but have different colors giving
+                        them an entirely new look. I also applied a slight bevel to everything so the rims/edges of the
+                        models reflected the sunlight in the map.
+                    </p>
+                    <div class="neon-pong-image-grid">
+                        <img src="media/headbang-facades-0.jpg" loading="lazy"
+                            alt="Brick and concrete building facade models" class="neon-pong-image">
+                        <img src="media/headbang-facades-1.jpg" loading="lazy"
+                            alt="The wireframes of brick and concrete building facade models." class="neon-pong-image">
+                    </div>
+                    <p>Some of the modular facade pieces made for the map.</p>
+                    <h3>Making The Devil's Cove Feel Alive</h3>
+                    <p>In a previous project, Future Fitness, I scripted a simple traffic system so cars, trucks,
+                        predestrians, and monorail carts could drive along a set path, slow down and stop, and then
+                        accelerate back up again. Along with the ambient sounds of vehicles and city life, it made the
+                        entire city feel very alive. I felt this map needed a similar system, so using Unreal 5's
+                        blueprints, I made a system that would move cars along a spline path. KO City actually does this
+                        similarly in The Hideout, and it was a perfect way to tie the environment into KO City. I
+                        modeled out some low poly fifties flying cars based on KO City's crew vehicles, made LODs for
+                        them (along with all the other models in the map), and made the spline pathing system spawn the
+                        cars in with randomly colored paint jobs.
+                    </p>
+                    <div class="neon-pong-image-grid">
+                        <img src="media/headbang-car-0.jpg" loading="lazy" alt="A low poly fifties style red car"
+                            class="neon-pong-image">
+                        <img src="media/headbang-car-1.jpg" loading="lazy"
+                            alt="A wireframe model of a fifties style car" class="neon-pong-image">
+                    </div>
+                    <p>The low poly car model I made, and its wireframe version.<br><br></p>
+                    <p>I also made various signs to decorate the buildings and blend the neon lit skyscrapers in with
+                        the more traditional brick and concrete structures. These signs utilize a holographic scanline
+                        material I created inspired by various hologram graphics in KO City. The most
+                        important sign is the one for Headbang Hospital, but there is many different signs for fictional
+                        businesses, and there is even a sign referencing my previous Future Fitness project. I also hung
+                        up some flags on the buildings, and I used their world space position to randomize their texture
+                        and used sine waves to animate them. All of these
+                        neon lights, holograms, and animated objects really made the city pop with color and life, and
+                        it all looks great using Unreal 5's Lumen lighting system.
+                    </p>
+                    <div class="neon-pong-image-grid">
+                        <img src="media/headbang-signs-0.jpg" loading="lazy"
+                            alt="Various neon signs that read Headbang Hospital, Future Fitness, All Father Real Estate, and Devil's Mug."
+                            class="neon-pong-image">
+                        <img src="media/headbang-signs-1.jpg" loading="lazy"
+                            alt="Various neon signs that read Exchange, World Premiere, From Then To Now, Light Mode Retail, and Dark Mode Hotel."
+                            class="neon-pong-image">
+                    </div>
+                    <p>The various neon/holographic signs I made for the map.<br><br></p>
+                    <div class="neon-pong-image-grid">
+                        <img src="media/headbang-flags-0.jpg" loading="lazy"
+                            alt="Orange, white, blue, and yellow striped flags hung on the side of brick buildings."
+                            class="neon-pong-image">
+                        <img src="media/headbang-flags-1.jpg" loading="lazy"
+                            alt="Orange, white, blue, and yellow striped flags hung on the side of a concrete building with neon lights in the background."
+                            class="neon-pong-image">
+                    </div>
+                    <p>Flags blowing in the wind, animated using sine waves and having a randomized texture based on the
+                        world position of the prop.</p>
+                    <h3>The Result</h3>
+                    <p>I have recieved very positive feedback on this project from my professor and from the KO City
+                        community. With this project, I greatly improved my texturing, modeling, and lighting skills
+                        from my previous projects. The simple, modular assets I made were given lots of detail with my
+                        handpainted textures, and the warm lighting and animated assets made everything pop with color.
+                        I look forward to doing more projects in the future with bright, bold environments like this
+                        one.</p>
+                    <div class="project-video"> <iframe src="https://www.youtube.com/embed/H0B2y4dGDTU"
+                            allowfullscreen></iframe></div>
+                    <p> <a href="https://drive.google.com/file/d/1dHLS6OlQ6aCrbqliZPtdfM-CfB4uzh_v/view" target="_blank"
+                            class="link-button">Download the final build</a></p>
+                    <p>Screenshots of the final environment. Click an image to see the high-res version.
+                    </p>
+                    <div class="neon-pong-image-grid">
+                        <a href="media/headbang-screenshot-0-high.png" target="_blank"><img
+                                src="media/headbang-screenshot-0-low.jpg" loading="lazy"
+                                alt="A colorful cityscape at evening" class="neon-pong-image"></a>
+                        <a href="media/headbang-screenshot-1-high.png" target="_blank"><img
+                                src="media/headbang-screenshot-1-low.jpg" loading="lazy"
+                                alt="A neon lit cityscape at nighttime" class="neon-pong-image"></a>
+                        <a href="media/headbang-screenshot-2-high.png" target="_blank"><img
+                                src="media/headbang-screenshot-2-low.jpg" loading="lazy"
+                                alt="A colorful cityscape at evening" class="neon-pong-image"></a>
+                        <a href="media/headbang-screenshot-3-high.png" target="_blank"><img
+                                src="media/headbang-screenshot-3-low.jpg" loading="lazy"
+                                alt="A neon lit cityscape at nighttime" class="neon-pong-image"></a>
+                        <a href="media/headbang-screenshot-4-high.png" target="_blank"><img
+                                src="media/headbang-screenshot-4-low.jpg" loading="lazy"
+                                alt="A colorful cityscape at evening" class="neon-pong-image"></a>
+                        <a href="media/headbang-screenshot-5-high.png" target="_blank"><img
+                                src="media/headbang-screenshot-5-low.jpg" loading="lazy"
+                                alt="A neon lit cityscape at nighttime" class="neon-pong-image"></a>
+                        <a href="media/headbang-screenshot-6-high.png" target="_blank"><img
+                                src="media/headbang-screenshot-6-low.jpg" loading="lazy"
+                                alt="A colorful cityscape at evening" class="neon-pong-image"></a>
+                        <a href="media/headbang-screenshot-7-high.png" target="_blank"><img
+                                src="media/headbang-screenshot-7-low.jpg" loading="lazy"
+                                alt="A neon lit cityscape at nighttime" class="neon-pong-image"></a>
+                    </div>
+                    <p>Ambience sound effects are from Team Fortress 2 by Valve Software.<br>
+                        Brda LT Std font by Linotype GmbH.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="cursed-cove-modal" class="modal" onclick="closeModalByClickingOffIt(event)">
+            <div class="modal-inner">
+                <!-- <button class="close-modal-button" onclick="closeModal()">&#10094;</button> -->
+                <div class="modal-desc">
+                    <h2>Cursed Cove</h2>
+                    <h3 class="subtitle">Professional, April - October 2018</h3>
+                    <p>In a team of 12, I helped developed the map "Cursed Cove" for Valve Software's "Team Fortress 2".
+                        The map was bought and featured by Valve as a part of the Halloween "Scream Fortress" event in
+                        2018. On the team, I contributed concepts for the level design, and I developed parts of the
+                        background/skybox of the map. In the map, players must kill other players to collect their
+                        souls, and then must deliver those souls to Davy Jones' Locker.</p>
+                </div>
+                <img src="media/cove-banner.jpg" loading="lazy" alt="Cursed Cove bay area" class="banner">
+                <div class="modal-desc">
+                    <h3>Design Concepts</h3>
+                    <p>During pre-production of the map, I contributed ideas for
+                        possible building shapes, locations on the map, and gameplay concepts. In order to create the
+                        feeling of a &quot;bustling pirate bay&quot; our buildings were made very tall with lots of
+                        cramped, narrow alleyways in between.</p>
+                    <div id="concept-images-small">
+                        <img src="media/cove-concept1.jpg" loading="lazy" alt="Early design for mid"
+                            class="concept-image-small">
+                        <img src="media/cove-concept2.jpg" loading="lazy" alt="concepts for fightin on angled rooftops"
+                            class="concept-image-small">
+                        <img src="media/cove-concept3.jpg" loading="lazy"
+                            alt="putting valuables on deadly cliffside concepts" class="concept-image-small">
+                    </div>
+                    <div id="concept-images-big">
+                        <img src="media/cove-concept4.jpg" loading="lazy" alt="ideas for detailing mid"
+                            class="concept-image-big">
+                        <img src="media/cove-concept5.jpg" loading="lazy"
+                            alt="early art style and texture palette development" class="concept-image-big">
+                    </div>
+                    <p>Design sketches of possible gameplay areas, and early art style and texture palette developement.
+                    </p>
+                    <h3>Background and Skybox Detailing</h3>
+                    <p>When the playable area of the map was nearly complete, some teammates and I started working on
+                        the out-of-bounds areas. While the playable area was symmetrical between the two teams, RED and
+                        BLU, the out-of-bounds areas would be asymmetrical to appear more visually interesting. I helped
+                        develop the jungle/forest area behind RED's base, as well as the cobble fortress behind BLU's
+                        base. This perfectly blended Team Fortress 2's tropes of RED using lots of natural, wooden
+                        materials, and BLU
+                        using lots of industrial materials for their bases with an old-timey pirate theme. While much of
+                        BLU's fortress was scrapped in the final product due to optimization concerns, it still helped
+                        us understand the visual style were we aiming for.</p>
+                    <div id="skybox-images">
+                        <img src="media/cove-skybox1.jpg" loading="lazy" alt="top down blueprint of map"
+                            class="concept-image-small skybox-image-1">
+                        <img src="media/cove-skybox2.jpg" loading="lazy" alt="landscaping behind red's base"
+                            class="concept-image-big skybox-image-2">
+                        <img src="media/cove-skybox3.jpg" loading="lazy" alt="cobble fortress behind blue's base"
+                            class="concept-image-big skybox-image-3">
+                        <img src="media/cove-final1.jpg" loading="lazy" alt="final red base"
+                            class="concept-image-big skybox-image-4">
+                        <img src="media/cove-final2.jpg" loading="lazy" alt="final blue base"
+                            class="concept-image-big skybox-image-5">
+                    </div>
+                    <p>Early versions of the skybox, and the final versions of the skybox.
+                    </p>
+                    <h3>The Result</h3>
+                    <p>Watch the trailer and view the map on the Steam Workshop! The map is also available to play on
+                        official Team Fortress 2 servers every year during the Halloween event!
+                    </p>
+                    <div class="project-video"> <iframe src="https://www.youtube.com/embed/Y8goSGrh_mg"
+                            allowfullscreen></iframe></div>
+                    <p><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1498584149" target="_blank"
+                            class="link-button">View on Steam Workshop</a></p>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="scarlet-meadow-modal" class="modal" onclick="closeModalByClickingOffIt(event)">
+            <div class="modal-inner">
+                <!-- <button class="close-modal-button" onclick="closeModal()">&#10094;</button> -->
+                <div class="modal-desc">
+                    <h2>Scarlet Meadow</h2>
+                    <h3 class="subtitle">Academic/Personal, February - May 2020</h3>
+                    <p>Scarlet Meadow is a 2D platformer, beat-em-up game with traditional, hand-drawn animation,
+                        developed in C# and Monogame. I worked with a team as the lead artist, but I also developed the
+                        physics system for objects in the game, enemy behavior, UI elements, and I designed and
+                        developed a
+                        robust, graphical level editor used for content production for the game. The game features
+                        traditional, hand-drawn animation with inspiration from comic books and Cuban architecture.</p>
+                </div>
+                <img src="media/scarlet-banner.jpg" loading="lazy" alt="Scarlet meadow logo" class="banner">
+                <div class="modal-desc">
+
+                    <h3>Physics and Interactivity</h3>
+                    <p>Many of the elements of Scarlet Meadow are physically interactive, meaning that a robust physics
+                        system that also responded well to the player's
+                        inputs was needed. I developed a physics system that has velocity, air resistance, and collision
+                        detection
+                        using axis-aligned bounding boxes. The collisions could be customized to be solid, semi-solid
+                        (meaning a platform the player can jump through), or triggers for certain events. In terms of
+                        interactive elements, I developed ziplines, trampolines, Scarlet's lasso attack which shoots out
+                        a lasso that grabs onto anything it touches and then comes straight back to the player, enemy
+                        behavior,
+                        linear and bouncy projectiles, collectible items, stage objectives, and much more.
+                    </p>
+                    <video muted loop playsinline controls loading="lazy" poster="media/scarlet-meadow-demo-p.jpg"
+                        class="inline-video">
+                        <source class="fullsize" src="media/scarlet-meadow-demo-48.mp4" type="video/mp4">
+                    </video>
+                    <h3>The Scarlet Editor and Level Design Pipeline</h3>
+                    <p>&quot;Scarlet Meadow&quot; features 16 unique levels all designed by me. Each level only takes
+                        about 2-3 minutes to complete, but they are tough, meaning that new players will be retrying
+                        each one until they master them all. In order to build all 16 levels, a powerful level editor
+                        tool was needed. Inspired by Valve Software’s &quot;Hammer Editor&quot; and Super Mario Maker’s
+                        &quot;Course Editor&quot;, &quot;The Scarlet Editor&quot; gives the user full control of their
+                        levels, letting them paint tiles of collision data, place props, enemies, items, and change
+                        properties of the level such as the background or level objective. The editor also has some
+                        quality of life features, such as being able to zoom in and out with the scroll wheel, pan
+                        around by clicking and dragging, and more. Stages are stored in &quot;.scar&quot; (Scarlet)
+                        files,
+                        which, when directly loaded into the game, will optimize the collision mesh and let the user
+                        play their level. I developed all of these systems in about 3 weeks.</p>
+                    <video muted loop playsinline controls loading="lazy" poster="media/scarlet-editor-demo-p.jpg"
+                        class="inline-video">
+                        <source class="fullsize" src="media/scarlet-editor-demo.mp4" type="video/mp4">
+                    </video>
+                    <h3>Traditional, Hand-Drawn Animation with Comic Book Flare</h3>
+                    <p>I conceptualized and originally designed the Scarlet Meadow character back in 2017, but as my own
+                        art style has changed and improved since then, so has the design of the character. For use in
+                        this full game, I fleshed out the overall world by adding more characters, such as Scarlet's
+                        friend Cocoa Cavero, the cactus civilians, and enemies like the Lawmakers and Robberbarons. All
+                        of the characters for this game are hand-drawn and inked on physical paper, and then scanned in
+                        to be colored
+                        digitally. This method gives the animation its hand-drawn charm, but the actual style, inpired
+                        by pop art, street art, and comic books, is angular, colorful, and bold. As with my previous
+                        project, &quot;Neon Pong&quot;, I applied a halftone filter to everything, which was a quick and
+                        affordable way to give some much needed texture and comic book flare to the otherwise flat
+                        graphics.</p>
+                    <video muted loop playsinline controls loading="lazy"
+                        poster="media/scarlet-meadow-animation-reel-p.jpg" class="inline-video">
+                        <source class="fullsize" src="media/scarlet-meadow-animation-reel.mp4" type="video/mp4">
+                    </video>
+                    <h3>&quot;Curbana&quot; and Environmental Design</h3>
+                    <p>The game takes place in &quot;Curbana&quot;, a fictional urban environment of skyscrapers mixed
+                        with
+                        colorful, Cuban inspired architecture. The props scattered throughout the levels are designed to
+                        give the
+                        levels a bit of depth in a 2D setting, while also making sure that characters, items, and
+                        interactive objects all share a bold, black outline that pops out to players' eyes.</p>
+                    <img src="media/scarlet-environment0.jpg" loading="lazy" alt="Diroama of a Scarlet Meadow level"
+                        id="scarlet-diorama" class="scarlet-diorama">
+                    <h3>The Result</h3>
+                    <p>The game is complete with 16 tricky levels, fun physics, and eye-catching graphics. You can watch
+                        the trailer
+                        and download the game and level editor below!
+                    </p>
+                    <div class="project-video"> <iframe src="https://www.youtube.com/embed/Hd5D4lWR8uQ"
+                            allowfullscreen></iframe></div>
+                    <p> <a href="https://drive.google.com/file/d/1RlL1hsU5aCFjWXO2nUsQ-MGaU93lmQs7/view" target="_blank"
+                            class="link-button">Download the game and level editor</a></p>
+                    <div class="gif-grid">
+                        <img src="media/scarlet-run.gif" loading="lazy" alt="Running animation of Scarlet"
+                            class="animation-gif">
+                        <img src="media/cocoa-run.gif" loading="lazy" alt="Running animation of Cocoa"
+                            class="animation-gif">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="future-fitness-modal" class="modal" onclick="closeModalByClickingOffIt(event)">
+            <div class="modal-inner">
+                <!-- <button class="close-modal-button" onclick="closeModal()">&#10094;</button> -->
+                <div class="modal-desc">
+                    <h2>Future Fitness</h2>
+                    <h3 class="subtitle">Academic/Personal, Oct - Dec 2020</h3>
+                    <p>
+                        An artistic environment/level design built using Maya and Unity. This project features all of
+                        the steps in creating and environment, from the initial greybox to the final build. This project
+                        features over 100 unique models and materials, all created by me. This was the first time I had
+                        used Unity's material and lighting system, but my knowledge of the Source Engine gave me a good
+                        foundation to start learning from. This was a solo project.
+                    </p>
+                </div>
+                <img src="media/future-fitness-banner.jpg" loading="lazy"
+                    alt="A fitness center with a city in the background" class="banner">
+                <div class="modal-desc">
+                    <h3>Greybox</h3>
+                    <p>I used primitives in Unity to develop the greybox for the environment. This gave me a good sense
+                        of where all my objects should be in the environment, as well as what objects I will need and
+                        how big they will be. I also scripted a traffic system so that the game automatically fills the
+                        city with trucks, cars, vans, buses, pedestrians, and monorail carts and moves them along paths
+                        to give the city some life.
+                    </p>
+                    <div class="neon-pong-image-grid">
+                        <img src="media/future-fitness-1.jpg" loading="lazy"
+                            alt="Primitives that create an abstract city scape" class="neon-pong-image">
+                        <img src="media/future-fitness-2.jpg" loading="lazy"
+                            alt="Primitives that create the inside of a fitness center" class="neon-pong-image">
+                    </div>
+                    <h3>Details and Modular Design</h3>
+                    <p>I then created models inside Maya that had more detail. Once these were built and UVed, I
+                        imported them into Unity and replaced the primitves with the more detailed models. For the city
+                        scape, I created different building &quot;facade&quot; models, and used them to construct
+                        different types of buildings. This modular design made all of the buildings fit the same visual
+                        style, and made it so I did not have to create tons of large, unique building models each with
+                        their own details.
+                    </p>
+                    <div class="neon-pong-image-grid">
+                        <img src="media/future-fitness-3.jpg" loading="lazy" alt="A more detailed city scape."
+                            class="neon-pong-image">
+                        <img src="media/future-fitness-4.jpg" loading="lazy"
+                            alt="A more detailed inside of a fitness center." class="neon-pong-image">
+                    </div>
+                    <h3>The Result</h3>
+                    <p>I then created textures and materials for all of the objects, this was my first time creating my
+                        own normal maps and messing with the metallic properties of materials. Finally, I built
+                        reflection probes, baked
+                        lighting, created my own skybox texture, added ambience sound effects (I used sounds from Team
+                        Fortress 2), and added
+                        some post processing effects to make the city's colors pop!</p>
+                    <div class="project-video"> <iframe src="https://www.youtube.com/embed/Dir3-2Cn90Q"
+                            allowfullscreen></iframe></div>
+                    <p> <a href="https://drive.google.com/file/d/14uodWK2YqRhLNZApHAryUkNqvvQgPstE/view" target="_blank"
+                            class="link-button">Download the final build</a></p>
+
+                    <div class="neon-pong-image-grid">
+                        <img src="media/future-fitness-5.jpg" loading="lazy"
+                            alt="A colorful inside of a fitness center." class="neon-pong-image">
+                        <img src="media/future-fitness-6.jpg" loading="lazy"
+                            alt="A cityscape with orange, blue, and red accents." class="neon-pong-image">
+                        <img src="media/future-fitness-7.jpg" loading="lazy"
+                            alt="A moody inside of a locker room, being illuminated by a glowing red exit sign."
+                            class="neon-pong-image">
+                        <img src="media/future-fitness-8.jpg" loading="lazy"
+                            alt="Looking up from the bottom of very tall buildings." class="neon-pong-image">
+                    </div>
+                    <p>Ambience sound effects are from Team Fortress 2 by Valve Software.<br>
+                        Delirium font by The Fontry.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="urban-underdog-modal" class="modal" onclick="closeModalByClickingOffIt(event)">
+            <div class="modal-inner">
+                <!-- <button class="close-modal-button" onclick="closeModal()">&#10094;</button> -->
+                <div class="modal-desc">
+                    <h2>The Urban Underdog</h2>
+                    <h3 class="subtitle">Academic/Personal, Nov - Dec 2020</h3>
+                    <p>Put your pedal to the metal as &quot;The Urban Underdog&quot; and race for your best time on
+                        randomly generated racetracks in this fast-paced, 3D driving game!
+                    </p>
+                    <p>
+                        The game runs in a browser and is built entirely in Javascript. Using vector, matrix, and
+                        projection mathematics I was able to develop my own
+                        3D graphics rendering engine with a fully dynamic camera. Features include: a free moving and
+                        rotating camera with adjustable field of view, rasterization of meshes onto the display,
+                        back-face-culling, and depth buffering. The game utilizes PixiJS to render the pixels of the 3D
+                        graphics and the UI elements such as text. It also uses Howler to play music and sound effects.
+                        This project was done solo.
+                    </p>
+                </div>
+                <img src="media/urban-underdog-banner.jpg" loading="lazy" alt="The Urban Underdog logo" class="banner">
+                <div class="modal-desc">
+                    <h3>Start your Engine</h3>
+                    <p>As The Urban Underdog, you can customize your car color to any color you want (this gets saved by
+                        the browser). Your goal is to go for
+                        your best time on randomly generated racetracks. If you find a racetrack you like, you can copy
+                        a code for the track, save it somewhere or send it to a friend, and input it back into the game
+                        to regenerate that track. Because these track codes are just coordinates for vertices on the
+                        track, dedicated users could theoritically write their own codes and build their own custom
+                        tracks! To generate random tracks, I loosely followed Gustavo Maciel's article:
+                        <a href="https://www.gamasutra.com/blogs/GustavoMaciel/20131229/207833/Generating_Procedural_Racetracks.php"
+                            target="_blank">&quot;Generating Procedural Racetracks&quot;</a>. To learn about this more
+                        in-depth, watch the video at the bottom of this page, or view the development documention at the
+                        bottom of this page.
+                    </p>
+
+                    <div class="project-video"> <iframe src="https://www.youtube.com/embed/TFesBdLkxMs"
+                            allowfullscreen></iframe></div>
+
+                    <h3>Drift Design</h3>
+                    <p>Implementing driving physics that can work on randomly generated racetracks was a very tough
+                        challenge. Early prototypes had very sensitive steering that let the user turn around sharp
+                        corners, and drifting made this sensitivity even higher. From player feedback, I halved the base
+                        steering sensivity multiple times, and made drifting increase steering sensitivity as wheel as
+                        the car's max speed and acceleration depending on how far you were turning.
+                    </p>
+
+                    <p>This solved multiple
+                        problems with the game's design: for one, players now had the ability to smoothly steer on more
+                        straight parts of the track, while also steering very sharply on tight corners by drifting. It
+                        also made entire races much more dynamic, as more experienced players could string together
+                        multiple
+                        drifts on straightways and take the advantage of the increased max speed to save time. One
+                        poorly
+                        placed drift, however,
+                        could send the car straight into a wall, creating a very interesting risk vs reward design.</p>
+                    <h3>The Result</h3>
+                    <p>You can play the game straight on your browser, no downloads required:</p>
+                    <p><a href="urban-underdog/" target="_blank" class="link-button">Play the game!</a></p>
+                    <p>I also have a page that delves deeper into the development process and shows some behind the
+                        scenes screenshots and features:</p>
+                    <p><a href="urban-underdog/about.html" target="_blank" class="link-button">View development
+                            documentation</a></p>
+                    <p>I have also made a video demo for the project that explains concepts such as 3D projections,
+                        barycentric coordinates, rasterization, and randomly generated racetracks, all shown with
+                        hand-drawn diagrams:</p>
+                    <div class="project-video"> <iframe src="https://www.youtube.com/embed/yRJY1z8hnXk"
+                            allowfullscreen></iframe></div>
+                    <p>Music used in-game: &quot;Everybody Falls&quot; and &quot;Final Fall&quot; from Fall Guys:
+                        Ultimate Knockout<br>
+                        Sound Effects from: Fall Guys: Ultimate Knockout and Half-Life 2<br>
+                        Goldman font by Jaikishan Patel, obtained through Google.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="queen-modal" class="modal" onclick="closeModalByClickingOffIt(event)">
+            <div class="modal-inner">
+                <!-- <button class="close-modal-button" onclick="closeModal()">&#10094;</button> -->
+                <div class="modal-desc">
+                    <h2>Queen Elizabeth III in &quot;A Royal Pain in the Arse&quot;</h2>
+                    <h3 class="subtitle">Personal, February - April 2018</h3>
+                    <p>A Team Fortress 2 map that makes players fight against my own 1930's style animated characters,
+                        play minigames for power-ups, and take control of the center control point, all released on
+                        April Fools as a
+                        &quot;joke styled map&quot;. I was
+                        inspired by Studio MDHR's 2017 game, &quot;Cuphead&quot;, with its own 1930's aesthetics and
+                        jazz
+                        soundtrack. This was the first time I had done a large scale project based on hand-drawn
+                        animation. This project was done solo.</p>
+
+                    <p><img src="media/queen-banner.png" loading="lazy" alt="Queen Elizabeth logo and character"
+                            class="queen-banner">
+                    </p>
+
+                    <h3>A New, Old-Timey, Concept</h3>
+                    <p> No one had really done a map with hand-drawn animated
+                        characters before, at least not to the same scope that I was going to attempt, meaning I was on
+                        my own to figure out how it should work. With hard limits on how much I could push the Source
+                        Engine to my will, I brainstormed many ideas
+                        on how to accomplish my goal. I thought of using 3D models with animated textures, but that was
+                        beyond my skillset at the time. I also thought of having tons of brushes, each one with
+                        a single frame of animation textured on it, that would flicker on and off in a sequence, but
+                        that would be wildly inefficient. I finally decided to utilize particle systems, as they are
+                        literally meant for putting 2D sprites in a 3D environment, and they gave me a huge range of
+                        customizability.
+                    </p>
+
+                    <p>The first test had some flickering issues, so to fix
+                        this I just duplicated the animation. Overall, using the particle system was a very cheap and
+                        easy way to display the animations in the map, and it also meant I could make the character
+                        always face the player's viewpoint, making the character look very evil.</p>
+
+                    <video muted loop playsinline controls loading="lazy" poster="media/queen-demo-p.jpg"
+                        class="inline-video">
+                        <source class="fullsize" src="media/queen-demo.mp4" type="video/mp4">
+                    </video>
+
+                    <p>After that first in-game test, I saw the potential of the idea, and I knew I had something
+                        special.</p>
+                    <h3>The Hand-Drawn Process</h3>
+                    <p>The design of the queen is based on many actual queens in history, such as <a
+                            href="https://www.rct.uk/collection/404444/elizabeth-i-when-a-princess"
+                            target="_blank">William Scrotts' painting of Elizabeth I</a>, a
+                        <a href="https://commons.wikimedia.org/wiki/File:The_Young_Queen_Victoria.jpg"
+                            target="_blank">young Queen Victoria</a>, and
+                        <a href="https://www.purecostumes.com/FM58372/queen-elizabeth-adult-costume.html"
+                            target="_blank">various Halloween costumes of queens</a> I found on Google. I was a
+                        big fan of the warm tones used in the clothing, and decided to give her a red and gold color
+                        palette. Her actual visual design is loosely based off of how I would think Americans in the
+                        1930's would picture an evil English queen, but modernized a bit to fit today's standards.
+                    </p>
+                    <p>In order to properly animate the queen, I bought a cheap light pad, some tracing paper, and I got
+                        to work. My process was to pencil draw each frame (&quot;pencil test&quot;), scan frames to
+                        digital images with a
+                        printer/scanner, insert the images into a video, look for issues in the animation, make any
+                        adjustments needed, and repeat until the
+                        movement was where I wanted it. I then trace over each frame on another sheet with .3 mm and
+                        .1mm PITT Artist Pens (&quot;inking&quot;), scan each frame again, and then color digitally
+                        with Paint.NET.</p>
+
+                    <p>In total, the animation clocked in at about 80-90 frames, with there being about 160 drawings, as
+                        each frame had both a pencil and inked version. It was a long process that took about a month,
+                        but
+                        the final result was such a
+                        good imitation of the 1930's style. Many people who played the map did not realize that it was
+                        original animation with an original character. Some even thought that I ripped the
+                        animation straight from &quot;Cuphead&quot;, which in my opinion means I did a pretty good job.
+                    </p>
+                    <div class="project-video"> <iframe src="https://www.youtube.com/embed/E6Qy-kO8ksE"
+                            allowfullscreen></iframe></div>
+
+                    <div class="queen-concept-grid">
+                        <img src="media/queen-concept1.jpg" loading="lazy" alt="Concept art of the Queen"
+                            class="queen-concept">
+                        <img src="media/queen-concept2.jpg" loading="lazy" alt="More concept art of the queen"
+                            class="queen-concept">
+                    </div>
+                    <p>Concept art of the queen. Notice the old version of &quot;Scarlet Meadow&quot; in the top right
+                        of the first image. She later starred in her own game of the same name!</p>
+
+                    <h3>That's Not All, Folks</h3>
+                    <p>As a map developed for an April Fools celebration, it has plenty more to offer than just the boss
+                        fight. The map is filled to the brim with minigames, jokes, references, and all sorts of fun
+                        little
+                        knick knacks. While the boss fight was the main focus, these smaller
+                        moments are what support the map, and they made sure the in game voice chat was filled with
+                        bursts of laughter.
+                    </p>
+                    <img src="media/queen-logic.jpg" loading="lazy" alt="Map entities used for the Queen boss fight"
+                        class="queen-logic">
+                    <p>A look at just some of the map logic/entities used for the queen boss fight and minigames. I
+                        really tried to
+                        stay organized by categorizing things into columns.</p>
+                    <h3>The Result</h3>
+                    <p>On April 10th, 2018 I woke up to a surprise message from popular
+                        YouTuber, <a href="https://twitter.com/RTGameCrowd" target="_blank">RTGame Daniel</a>, saying he
+                        was releasing a video about my map. Since then, RTGame Daniel has amassed an enormous following
+                        on YouTube and Twitch, and the small success of my map has
+                        encouraged me to keep going until I stumble upon my next great idea. I am very appreciative of
+                        RTGame, his community, and the opportunities they opened up for me. You can watch his video,
+                        which shows the map in good detail, below.
+                    </p>
+
+                    <p>Queen Elizabeth III was the first time I had done a large scale project based on hand-drawn
+                        animation, and those techniques and skills can be seen influencing my future projects
+                        such as Neon Pong and Scarlet Meadow.
+                    </p>
+                    <div class="project-video"> <iframe src="https://www.youtube.com/embed/YC8Av-lOFk8"
+                            allowfullscreen></iframe></div>
+
+
+                    <p> <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1764818756" target="_blank"
+                            class="link-button">View on Steam Workshop</a></p>
+                    <p><img src="media/queen-footer.png" loading="lazy"
+                            alt="Cartoon versions of the Team Fortress 2 characters" class="neon-pong-background"></p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="neon-pong-modal" class="modal" onclick="closeModalByClickingOffIt(event)">
+            <div class="modal-inner">
+                <!-- <button class="close-modal-button" onclick="closeModal()">&#10094;</button> -->
+                <div class="modal-desc">
+                    <h2>Neon Pong</h2>
+                    <h3 class="subtitle">Academic/Personal, April - May 2019</h3>
+                    <p>A side-scrolling, singleplayer game where you return attacks from a "Pong" based enemy in urban
+                        environments. I developed the game with a partner using Java and its built-in libraries.
+                        The game features traditional, hand-drawn animation and a bold comic book style made by me. Neon
+                        Pong had a very quick development cycle and some technical hurdles, which affected all aspects
+                        of the project.
+                    </p>
+                </div>
+                <img src="media/neon-pong-banner.jpg" loading="lazy" alt="Neon Pong logo" class="banner">
+                <div class="modal-desc">
+                    <h3>A Dynamic Take on an Old Classic</h3>
+                    <p>In Neon Pong, your goal is to win a Pong game, but this time you control a physical character
+                        rather than a simple bar/paddle. Everytime you hit the ball, its speed increases and you built
+                        up a special meter. The game required physics, precise movement, and fast graphics.
+                        My partner and I started by developing a simple update-render cycle that
+                        took advantage of multiple threads to display graphics. The game needed to run at a frame rate
+                        of at least 30-60 frames per second, and it needed to do this on the school computers. Due to
+                        this, the game's resolution is locked at 720p, and it limits how many images we can render at
+                        once.
+                    </p>
+
+                    <p>I then developed the physics and collisions systems, which were not as optimized as they could
+                        have been,
+                        as the collisions used a lot of &quot;pixel perfect&quot; calculations for basic rectangle
+                        hitboxes. Of course, after the fact we realize we should have used the more efficient
+                        Axis-Aligned Bounding Box collisions, which I do use in later projects. I also developed an
+                        external &quot;Animation
+                        Viewer&quot; tool in Java that lets me add images to an animation as frames, customize their
+                        order, and dynamically adjust the speed of the animations. This let me quickly scan pencil tests
+                        and immediately load them into the tool to find and
+                        fix any janky movement. It also allowed me to fine-tune the speed of the animation so they could
+                        go directly into the game.</p>
+
+                    <video muted loop playsinline controls loading="lazy" poster="media/neon-pong-demo-p.jpg"
+                        class="inline-video">
+                        <source class="fullsize" src="media/neon-pong-demo.mp4" type="video/mp4">
+                    </video>
+                    <h3>Hand-Drawn Animation with Comic Book Inspiration</h3>
+                    <p>With this game's very quick development cycle, I had to cut some corners on the animation. The
+                        longest hand-drawn animations were the run
+                        cycles, clocking in at only 6 frames each (not including the electric-shock effect, which is 20
+                        frames but was done digitally). All other animations were just 1 frame poses. This made all
+                        of the movement feel very snappy, but that actually meshed really well with the fast, precise
+                        gameplay. I also applied a
+                        halftone filter to everything, which was a really cheap and effective method to add some much
+                        needed texture to otherwise flat drawings, and it made everything look like it came straight
+                        from a comic book.
+                    </p>
+                    <video muted loop playsinline controls loading="lazy" poster="media/neon-pong-animation-reel-p.jpg"
+                        class="inline-video">
+                        <source class="fullsize" src="media/neon-pong-animation-reel.mp4" type="video/mp4">
+                    </video>
+                    <div class="neon-pong-image-grid">
+                        <img src="media/neon-pong-animation1.jpg" loading="lazy"
+                            alt="The tracing paper inked drawings used in animation" class="neon-pong-image">
+                        <img src="media/neon-pong-animation2.jpg" loading="lazy"
+                            alt="The tracing paper inked drawings used in animation" class="neon-pong-image">
+                    </div>
+
+
+                    <h3>Detailed Backgrounds in a 2D Scene</h3>
+                    <p>While the animation was hand-drawn, I did not have time to draw or paint backgrounds, so I made
+                        them by creating maps in Team Fortress 2. These were dioramas of sorts that were only seen from
+                        one angle, and they were originally split up into layers for a parallax scrolling effect, but
+                        this got cut due to optimization concerns. Using TF2 as a base let me quickly add lighting and
+                        use premade assets, which gave the background detail in a very short timespan. I also
+                        applied halftone filters here so they were mesh well with the animation.
+                        <img src="media/neon-pong-rooftops.jpg" loading="lazy" alt="Background for the Rooftops stage."
+                            class="neon-pong-background">
+                        <img src="media/neon-pong-underpass.jpg" loading="lazy"
+                            alt="Background for the Underpass stage." class="neon-pong-background">
+                        An animated version of the Underpass stage is used as the background for this site!
+                    </p>
+                    <h3>The Result</h3>
+                    <p>Compared to my other projects, Neon Pong is definitely smaller content wise. But being one of the
+                        first games that I built entirely from scratch, having such a small development cycle, and being
+                        one of the last major projects I did during my senior year of high school, it holds a special
+                        place in my heart. Our teacher gave us an immediate 100&#37; on the graphics, but docked us a
+                        couple
+                        points on the game, as it was a little too fast and difficult for her. The characters of Neon
+                        Pong, Electra and Suit, will return as part of a much larger ensemble of characters in Neon
+                        Heights.</p>
+                    <p> <a href="https://drive.google.com/file/d/1VCiBw_a8V_ODqWOT8RtuWczoc_B88SSI/view" target="_blank"
+                            class="link-button">Download the game</a></p>
+                    <div class="gif-grid">
+                        <img src="media/electra-run.gif" loading="lazy" alt="Running animation of Electra"
+                            class="animation-gif">
+                        <img src="media/suit-run.gif" loading="lazy" alt="Running animation of Suit"
+                            class="animation-gif">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="neon-heights-modal" class="modal" onclick="closeModalByClickingOffIt(event)">
+            <div class="modal-inner">
+                <!-- <button class="close-modal-button" onclick="closeModal()">&#10094;</button> -->
+                <div class="modal-desc">
+                    <h2>Neon Heights</h2>
+                    <h3 class="subtitle">Personal, February 2019 - Current</h3>
+                    <p>A local and online multiplayer game currently being developed in Unity. Two teams of four players
+                        pick between eight different unique characters to play in this intense Team Hand Ball inspired
+                        sport, but with more platforming, fighting, and teamwork. This project has gone through many
+                        prototypes, I have programmed menus and UI, local multiplayer, and game logic, and I have
+                        designed characters and environments for the project.</p>
+                </div>
+                <img src="media/neon-heights-banner.jpg" loading="lazy"
+                    alt="Neon Heights logo in front of night time city" class="banner">
+                <div class="modal-desc">
+                    <h3>The Spark</h3>
+                    <p>Concepts for Neon Heights date back to November 2018, when I first designed the
+                        &quot;Electra&quot; character, which sparked the whole idea. Two teams try to get a ball in the
+                        other
+                        team's goal and intense back-and-forth gameplay ensues with movement systems that can be comboed
+                        together. Each character has a unique &quot;fluorescent ability&quot; that charges up based on
+                        passes made to teammates. These abilities can range from building defensive walls to flipping
+                        the gravity of the stage.
+                    </p>
+
+                    <p>Besides the gameplay, I really want to focus on the characterization of the game. I want to
+                        design eight very special characters, rather than a hundred unmemorable ones. The game takes
+                        place in a variety of urban environments such as neon-lit rooftops and overgrown underpasses,
+                        but its all set in one city that reeks of inequality. The name &quot;Neon Heights&quot; is a pun
+                        off of &quot;neon lights&quot;, but the &quot;Heights&quot; refers to not only the large
+                        skyscrapers of the city, but also the social differences between people in the city, like a
+                        social/financial hierarchy or totem pole. The teams are based around
+                        &quot;Champions VS Underdogs&quot;, and while there are no gameplay differences between the
+                        teams, visually they will appear different, with the Champions repping a bright white, almost
+                        golden color scheme, and the Underdogs repping a darker, but more colorful color scheme.
+                    </p>
+                    <img src="media/neon-heights-characters.jpg" loading="lazy"
+                        alt="the Neon Heights cast of characters" class="queen-logic">
+
+                    <h3>Prototypes</h3>
+                    <p>I started developing prototypes on and off in my free time in Feburary 2019, and after a couple
+                        play tests with my friends at the end of 2019, it proves to be a fun concept that just needs
+                        some ironing out. In June 2020, my friend and I started working on an online multiplayer version
+                        using Mirror Networking, an open source networking system for Unity.
+                    </p>
+                    <img src="media/neon-heights-css.jpg" loading="lazy"
+                        alt="Neon heights character and team select screen" class="queen-logic">
+                    <p>A prototype of the character and team select screen. Players can join the game by pressing A on
+                        their gamepad, and they can move their cursor around and make selections.</p>
+
+                    <div class="neon-heights-concept-grid">
+                        <img src="media/neon-heights-concept2.jpg" loading="lazy" alt="Concept art of Poppy the Popstar"
+                            class="queen-concept">
+                        <img src="media/neon-heights-concept1.jpg" loading="lazy"
+                            alt="Concept art of Electra, the Urban Underdog" class="queen-concept">
+                    </div>
+                    <p>Concept art of Poppy the Popstar and Electra the Urban Underdog.</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Contact:<br>
+                nickmbaker1@gmail.com<br><br>
+
+                Website by Nick Baker, 2020-2022.<br>
+                Roboto font by Christian Robertson, obtained through Google.<br>
+                Delirium font by The Fontry.<br>
+                Goldman font by Jaikishan Patel, obtained through Google.<br>
+                &quot;Fall Guys&quot; is owned by Mediatonic and Devolver Digital.<br>
+                &quot;Knockout City&quot; is owned by Velan Studios and EA.
+            </p>
+        </footer>
     </main>
+
+    <script src="js/main.js"></script>
 </body>
 
 </html>

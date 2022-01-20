@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 2 Design Notes</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles/mainStyle.css">
+</head>
+
+<body>
+    <header>
+        <h1>Design Notes</h1>
+    </header>
+    <main>
+        <div id="design-notes">I'm really happy with the look of the site. Its smooth and easy to understand.
+            Overall, the 2 hardest things were favoriting GIFs, and implementing filters with searching.
+            <br><br>
+            With favoriting gifs, it was really difficult to make the button of the gif fill in/be hollow
+            in ALL instances of that gif, no matter if it was in the trending, search, or favorites section.
+            It had to be consistent, and that took a lot of storing HTML elements and searching through arrays to figure
+            out.
+            Debug tools and the console log really helped me out here.
+            <br><br>
+            With filters (specifically the recency filter), it is possible to make the results you see on screen
+            different from the results that Giphy
+            gives me. What I mean by this is that Giphy will give me 25 gifs, and I need to wittle those down into what
+            fits the filter. But what if that
+            one query of 25 gifs resulted in 0 that fit the filter? Is the search really done? Did I search giphy for
+            gifs that
+            fit the filter? Or did I just search THOSE 25 gifs for ones that fit the filter. So I had to query Giphy
+            until it returns with no results, or I have enough
+            gifs to fill up the page, and then if the user wants to search even more of giphy, they can click the 'load
+            more' button.
+            It took a while to figure out the order of conditional statements to do this process, but overall I'm very
+            proud of it.
+            <br><br>
+            I'm also really happy with the feedback messages that appear when the user copies a link or
+            favorites/unfavorites a gif.
+            <br><br>
+            I'd give myself a very good grade, I don't know maybe an A, because my site is smooth, easy to use, and its
+            honestly kind of fun to just easily
+            favorite gifs to store for later. I could see the practical use of searching for gifs, saving reaction gifs
+            the user likes, and then later on,
+            when they need to quickly get that reaction gif to respond to a chat message, they can access their
+            favorites just like that.
+        </div>
+    </main>
+</body>
+
+</html>

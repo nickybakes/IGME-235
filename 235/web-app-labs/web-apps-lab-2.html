@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>DOM-3</title>
+    <style>
+        body {
+            border: 1px solid gray;
+        }
+
+        p b {
+            transform: rotate(20deg)
+        }
+    </style>
+</head>
+
+<body>
+    <h1>My Page</h1>
+    <h2>Info</h2>
+    <h2>Pictures</h2>
+    <h2>More Info</h2>
+    <p>Blah <b>Blah</b> Blah</p>
+    <p>Blah <b>Blah</b> Blah</p>
+    <p id="lastParagraph">Blah <b>Blah</b> Blah</p>
+    <footer>Copyright &copy; <b>20XX</b></footer>
+    <script>
+        "use strict";
+
+        // add your own code here.
+        document.querySelector("h1").innerHTML = "My UFO Page";
+        document.querySelectorAll("h2")[0].innerHTML = "My UFO Info";
+        document.querySelectorAll("h2")[1].innerHTML = "My UFO Pictures";
+        document.querySelectorAll("h2")[2].innerHTML = "";
+        document.body.style.fontFamily = "sans-serif";
+        document.body.style.color = "#ed3737";
+
+        document.querySelectorAll("p")[0].innerHTML = "Report your UFO sightings here: <a href='http://www.nuforc.org/'>http://www.nuforc.org/</a>";
+        document.querySelectorAll("p")[0].style.color = "green";
+        document.querySelectorAll("p")[0].style.fontWeight = "bold";
+        document.querySelectorAll("p")[0].style.fontSize = "2em";
+        document.querySelectorAll("p")[0].style.textTransform = "uppercase";
+        document.querySelectorAll("p")[0].style.textShadow = "3px 2px #A44";
+        document.querySelectorAll("p")[1].innerHTML = "";
+        document.querySelectorAll("p")[2].innerHTML = "<img src='https://upload.wikimedia.org/wikipedia/commons/d/df/PurportedUFO2.jpg' alt='Flying saucer in the sky.'>";
+
+        document.querySelectorAll("footer").innerHTML = "&#169; 2020 Nick Baker"
+    </script>
+</body>
+
+</html>

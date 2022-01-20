@@ -1,0 +1,195 @@
+		html,
+		body {
+			background-color: rgb(18, 18, 18);
+			color: white;
+			font-family: "Goldman", Arial, sans-serif;
+			/* margin: 0 auto; */
+			/* padding: 2rem; */
+			/* text-align: center; */
+		}
+
+		* {
+			transition: all 0.2s ease-in-out;
+		}
+
+		#output {
+			font-size: 150%;
+		}
+
+		#my-button, #babble-button-5 {
+			font-family: "Goldman", Arial, sans-serif;
+			background-color: #2e122998;
+			font-size: x-large;
+			color: white;
+			border-radius: 16px;
+			padding: 2rem;
+			margin: 10px;
+			outline: none;
+		}
+
+		#my-button {
+			border: #ffd900 solid 2px;
+		}
+
+		#babble-button-5 {
+			border: #ff0040 solid 2px;
+		}
+
+		#my-button:hover, #babble-button-5 {
+			cursor: pointer;
+		}
+
+		#my-button:hover,
+		#my-button:focus {
+			border-color: #ffd900;
+			color: #ffd900;
+			background-color: #ffd9002a;
+		}
+
+		#my-button.active,
+		#my-button:active {
+			border-color: #ffd900;
+			background-color: #ffd900;
+			color: black;
+		}
+
+		#babble-button-5:hover,
+		#babble-button-5:focus {
+			border-color: #ff0040;
+			color: #ff0040;
+			background-color: #a301294f;
+		}
+
+		#babble-button-5.active,
+		#babble-button-5:active {
+			border-color: #ff0040;
+			background-color: #ff0040;
+			color: black;
+		}
+
+		@media only screen and (min-width:240px) {
+			.container {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-direction: column;
+			}
+
+			html,
+			body,
+			.container {
+				height: 100%;
+				margin: 0;
+			}
+
+			h1 {
+				font-size: 1rem;
+				padding: .8rem;
+				margin: 0;
+				text-align: center;
+				background-color: #7c00b6;
+				color: white;
+			}
+
+			#my-button {
+				width: 80%;
+				font-size: .9rem;
+			}
+
+			body {
+				text-align: center;
+				font-size: 1rem;
+			}
+
+			#babble-button-5 {
+				display: none;
+			}
+		}
+
+		@media only screen and (min-width:320px) {
+
+			h1 {
+				font-size: 1.2rem;
+				background-color: #ffd900;
+				color: black;
+			}
+
+			#output {
+				text-align: center;
+			}
+		}
+
+		@media only screen and (min-width:768px) {
+
+			h1 {
+				font-size: 3rem;
+				background-color: #ff7300;
+				color: white;
+			}
+
+			#my-button {
+				width: 300px;
+				font-size: 1.5rem;
+			}
+
+			body {
+				text-align: center;
+				font-size: 2rem;
+			}
+		}
+
+		@media only screen and (min-width:1024px) {
+
+			body {
+				font-size: 1rem;
+				text-align: left;
+			}
+
+			h1 {
+				background-color: #ff0040;
+			}
+
+			.container {
+				display: block;
+				margin: 1rem;
+			}
+
+			#output {
+				text-align: left;
+			}
+
+		}
+
+		@media only screen and (min-width:1408px) {
+
+			body {
+				font-size: 2rem;
+				text-align: left;
+			}
+
+			h1 {
+				text-align: left;
+				background-color: #ff0040;
+			}
+
+			.container {
+				display: block;
+				margin: 1rem;
+			}
+
+			#output {
+				text-align: left;
+			}
+
+			#babble-button-5 {
+				display: inline-block;
+				font-size: 3rem;
+				width: 500px;
+
+			}
+
+			#my-button {
+				width: 500px;
+				font-size: 3rem;
+			}
+		}

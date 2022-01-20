@@ -1,0 +1,476 @@
+html, body {
+    color: white;
+    font-family: "Roboto", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+html {
+    height: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+/* background of our page is a dark grey */
+body {
+    background-color: rgb(31, 31, 31);
+}
+
+/* everything has a smooth transition between states */
+* {
+    transition: all 0.2s ease-in-out;
+}
+
+/* our header has 2 parts, the title (on the right), and author (left) */
+header {
+    margin: 3em auto;
+    width: 65vw;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    justify-content: center;
+    align-items: center;
+}
+/* make sure the author text is aligned to the left */
+.header-author {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin: 0;
+    text-align: end;
+}
+
+h1 {
+    font-size: 4.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+h2 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 1em;
+}
+
+h3 {
+    color: #ffd900;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 4px;
+}
+
+h4 {
+    text-align: center;
+    font-size: 1.6em;
+    margin: 0;
+    margin-bottom: 4px;
+}
+
+#design-notes{
+    display: block;
+    min-width: 60%;
+    width: 80%;
+    margin: 0 auto
+}
+
+/* our nav bar needs to have 3 sections for our buttons
+and it needs to stick to the page so its always prevelant */
+nav {
+    margin: 0 auto;
+    width: 80vw;
+    /* this padding is here so that the nav bar's background reaches to the edge
+    of the page */
+    padding: 2vh 4vw 10px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: stretch;
+    align-items: center;
+    column-gap: 2em;
+    position: sticky;
+    top: 0;
+    background-color: rgb(31, 31, 31);
+    background-size: 100px;
+    z-index: 1;
+}
+
+/* general settings for buttons across  the page */
+button{
+    background-color: #2a1b5eaf;
+    font-family: "Roboto", Arial, sans-serif;
+    outline: none;
+    color: white;
+    font-size: x-large;
+}
+
+.find-gifs-button, .load-more-button, .tab-button {
+    font-family: "Roboto", Arial, sans-serif;
+    border: #ffd900 solid 2px;
+    border-radius: 16px;
+    padding: 10px 8px;
+    margin: 5px;
+    width: 100%;
+    outline: none;
+}
+
+.load-more-button {
+    visibility: hidden;
+    display: block;
+    margin: 2em auto 2em;
+    width: 40%;
+}
+
+.find-gifs-button:hover, .load-more-button:hover, .tab-button:hover, .find-gifs-button:focus, .load-more-button:focus, .tab-button:focus, .copy-link-button:hover, .copy-link-button:focus, .view-original-button:hover, .view-original-button:focus {
+    border-color: #ffd900;
+    color: #ffd900;
+    background-color: #ffd9002a;
+    cursor: pointer;
+}
+
+.find-gifs-button:active, .load-more-button:active, .tab-button.active, .tab-button:active, .copy-link-button:active, .view-original-button:active {
+    border-color: #ffd900;
+    background-color: #ffd900;
+    color: black;
+}
+
+/* to make our tab/sections system work, our shown content area is a grid
+with everything inside the first spot on the grid */
+#shown-content {
+    margin: 3em auto;
+    width: 80vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 50vh;
+    min-height: 30vh;
+}
+
+/* sections start out as hidden until shown via the java script/the tab button that shows it */
+.tab-content {
+    opacity: 0;
+    visibility: hidden;
+    grid-row-start: 1;
+    grid-column-start: 1;
+}
+
+/* the grid where we display our gifs */
+.gif-display-grid {
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 200px);
+    column-gap: 2em;
+    row-gap: 2em;
+    justify-content: center;
+}
+
+#favorites-gifs-display-grid{
+    margin-bottom: 3em;
+}
+
+/* the block the displays a gif, the fav button, copy link button, etc */
+.gif-display-block {
+    background-color: #12202ecb;
+    border: white solid 2px;
+    color: white;
+    border-radius: 16px;
+    width: 100%;
+    display: grid;
+    grid-template-areas: "gif-display gif-display" "rating favorite-button" "copylink-button view-original-button";
+    row-gap: 1em;
+}
+
+/* the specific part of the gif block where our gif is displayed */
+.gif-display {
+    grid-area: gif-display;
+    width: 100%;
+    border-radius: 12px 12px 0 0;
+    /* due to this height property the gifs will get cropped a bit, but it 
+    means everything is the same height and it looks way better */
+    height: max-content;
+    align-self: stretch;
+    object-fit: cover;
+}
+
+.gif-rating {
+    grid-area: rating;
+    width: 100%;
+    text-align: center;
+    align-self: center;
+}
+
+/* our favorite button is actually 2 buttons displayed in the
+same spot on the gif block */
+.favorite-button-display{
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: flex-start;
+    align-content: center;
+}
+
+/* defining our "2" favorite buttons */
+.favorite-button-hollow, .favorite-button-filled {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    border: none;
+    background: none;
+    font-size: 3em;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+    align-self: center;
+}
+
+.favorite-button-filled {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.favorite-button-filled:hover, .favorite-button-hollow:hover,.favorite-button-filled:focus, .favorite-button-hollow:focus {
+    color: #ffd900;
+    cursor: pointer;
+}
+
+.favorite-button-filled:active, .favorite-button-hollow:active {
+    color: #ffd9002a;
+}
+
+/* the rest of our gif block widgets */
+.copy-link-button {
+    border: none;
+    grid-area: copylink-button;
+    border-top: #ffd900 solid 2px;
+    border-right: #ffd900 solid 2px;
+    border-radius: 0 0 0 12px;
+    font-size: large;
+    padding: 6px 2px;
+    width: 100%;
+}
+
+.view-original-button {
+    grid-area: view-original-button;
+    border: none;
+    border-top: #ffd900 solid 2px;
+    border-left: #ffd900 solid 2px;
+    border-radius: 0 0 12px 0;
+    font-size: large;
+    padding: 6px 2px;
+    width: 100%;
+}
+
+.hidden-embed-url, .hidden-url{
+    display: none;
+}
+
+/* message box needs to float in front of everything */
+.message {
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    background-color: #2e1229d3;
+    border: #ffd900 solid 2px;
+    font-size: xx-large;
+    border-radius: 16px;
+    padding: 1.5em .7em;
+    margin: 3em auto;
+    margin-left: -25%;
+    display: block;
+    width: 50%;
+    outline: none;
+    visibility: hidden;
+    transform: scaleY(0);
+    text-align: center;
+    pointer-events: none
+}
+
+/* a 2 section grid, 1 for the widgets, 1 for the search button */
+#search-widgets-area{
+    background-color: #12202ecb;
+    border: white solid 2px;
+    color: white;
+    border-radius: 16px;
+    width: 90%;
+    display: grid;
+    padding: 2em;
+    grid-template-columns: 60% auto;
+    column-gap: 2em;
+    margin: 0 auto;
+    justify-items: center;
+    align-items: center;
+}
+
+/* a grid that holds the search bar/dropdown widgets in
+ a well laid out aree=a */
+#search-options {
+    width: 100%;
+    display: grid;
+    grid-template-areas: "search-bar search-bar search-bar" "recency recency rating";
+    row-gap: 1em;
+    column-gap: 1em;
+}
+
+/* the look of our search option widgets, including
+where on the grid their go */
+.search-bar {
+    grid-area: search-bar;
+    width: 100%;
+}
+
+.search-bar input {
+    font-family: "Roboto", Arial, sans-serif;
+    background-color: #0c050be5;
+    border: #ffd900 solid 2px;
+    font-size: x-large;
+    color: white;
+    display: inline;
+    border-radius: 16px;
+    padding: 10px 8px;
+    width: calc(100% - 20px);
+    outline: none;
+}
+
+.search-bar input:hover, .search-bar input:focus, select:hover, select:focus {
+    border-color: #ffd900;
+    background-color: #2e2700;
+}
+
+select {
+    font-family: "Roboto", Arial, sans-serif;
+    background-color: #0c050be5;
+    border: #ffd900 solid 2px;
+    font-size: x-large;
+    color: white;
+    border-radius: 16px;
+    padding: 10px 8px;
+    width: 100%;
+    outline: none;
+}
+
+.find-gifs-button {
+    display: block;
+    width: 100%;
+    height: 90%;
+    align-self: flex-end;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 2.3rem;
+    font-weight: bold;
+}
+
+.recency-dropdown {
+    grid-area: recency;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.rating-dropdown {
+    grid-area: rating;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.status{
+    text-align: center;
+    margin: 1em auto;
+    font-size: large;
+}
+
+.spinning-icon {
+    border: 16px solid #ffd9002a;
+    border-top: 16px solid #ffd900;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    -webkit-animation: spin 1s linear infinite;
+    display: block;
+    margin: 2em auto;
+}
+
+/* animations needed for the spinner icon */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* adding this for compatability with some browsers */
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+/* mobile CSS removes extra space on the side,
+making content fit to the width of the screen */
+@media screen and (max-width:1000px) {
+    header {
+        margin: 3em auto;
+        width: 90vw;
+        grid-template-columns: 100%;
+    }
+
+    .header-author {
+        font-size: 1.4rem;
+        margin-top: 10px;
+        text-align: start;
+    }
+    
+    h1 {
+        font-size: 4rem;
+        font-weight: bold;
+        margin: 0;
+    }
+
+    nav {
+        width: 90vw;
+        padding: 2vh 0 10px;
+        column-gap: 1em;
+    }
+
+    .gif-display-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
+        column-gap: 2em;
+        row-gap: 2em;
+        justify-content: center;
+    }
+
+    .find-gifs-button, .load-more-button, .tab-button {
+        font-size: large;
+        padding: 8px 6px;
+        margin: 0;
+        width: 100%;
+    }
+
+    #search-widgets-area{
+        width: 85%;
+        grid-template-columns: 100%;
+        row-gap: 2em;
+    }
+
+    .find-gifs-button {
+        display: block;
+        width: 100%;
+        height: 90%;
+        align-self: flex-end;
+        margin: 0 auto;
+        text-align: center;
+        font-size: x-large;
+        padding-bottom: 16px;
+        font-weight: bold;
+    }
+
+    .message{
+        margin-left: -30%;;
+    }
+}
+
