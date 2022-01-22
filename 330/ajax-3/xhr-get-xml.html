@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>XHR - Load XML</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h2>XHR - Load Text File</h2>
+    <p>The <code>pet-names.txt</code> file contains popular dog and cat pet names, separated by commas.</p>
+    <p>Note that because XHR is loading a local file, this and the other examples will have to be run off a web server
+        rather than from your computer's hard drive (e.g. banjo.rit.edu or VSCode's liveserver etc)</p>
+
+    <hr>
+    <button id="my-button">Load Data</button>
+    <div id="output">
+        <p>Click button to load</p>
+    </div>
+
+
+    <script>
+        document.querySelector("#my-button").onclick = loadTextXHR;
+
+        function loadTextXHR() {
+            const url = "data/pet-names.xml";
+            const xhr = new XMLHttpRequest();
+            xhr.onload = (e) => {
+                console.log(`In online - HTTP Status Code = ${e.target.status}`);
+                const xml = e.target.responseXML;
+
+                if (!xml) {
+                    document.querySelector("#output").innerHTML = "XML is null";
+                    return;
+                }
+                const dogNames = xml.querySelector("namelist[cid='dognames']").textContent.split(",");
+                const catNames = xml.querySelector("namelist[cid='catnames']").textContent.split(",");
+
+                //one liner:
+                const dogHtml = `<ol> ${dogNames.map(w => `<li>${w}</li>`).join("")} </ol>`;
+                const catHtml = `<ol> ${catNames.map(w => `<li>${w}</li>`).join("")} </ol>`;
+
+                const html = `
+                    <h3>Dog Names</h3>
+                    ${dogHtml}
+                    <h3>Cat Names</h3>
+                    ${catHtml}
+                `;
+
+                document.querySelector("#output").innerHTML = html;
+            };
+
+            xhr.onerror = e => console.log(`In on error - HTTP Status Code = ${e.target.status}`);
+            xhr.open("GET", url);
+            xhr.send();
+        }
+    </script>
+</body>
+
+</html>

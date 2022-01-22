@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 	<title>XHR - Helper Function</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+	<script type="module" src="src/main.js"></script>
 </head>
 
 <body>
@@ -34,32 +35,5 @@
 	</div>
 
 </body>
-<script>
-	document.querySelector("#button-1").onclick = () => { loadTextXHR("data/taffy-facts.txt", updateTaffyOutput) };
-	document.querySelector("#button-2").onclick = () => { loadTextXHR("data/viking-facts.txt", updateVikingOutput) };
-
-	function updateTaffyOutput(e){
-		document.querySelector("#output-1").innerHTML = e.target.responseText;
-	}
-
-	function updateVikingOutput(e){
-		document.querySelector("#output-2").innerHTML = e.target.responseText;
-	}
-
-	function loadTextXHR(url, callback) {
-		const xhr = new XMLHttpRequest();
-		xhr.onload = (e) => {
-			// console.log(`In online - HTTP Status Code = ${e.target.status}`);
-			// console.log(`Success - the file length is ${text.length}`);
-
-			callback(e);
-
-		};
-
-		xhr.onerror = e => console.log(`In on error - HTTP Status Code = ${e.target.status}`);
-		xhr.open("GET", url);
-		xhr.send();
-	}
-</script>
 
 </html>
